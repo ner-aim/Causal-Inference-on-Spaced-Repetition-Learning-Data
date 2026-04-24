@@ -27,7 +27,7 @@ CLOUD_MODE = not DB_PATH.exists()
 
 st.set_page_config(
     page_title="Anki Learning Analytics",
-    page_icon="🧠",
+    page_icon="火",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -131,7 +131,7 @@ def fig_path(name: str) -> Path:
 
 # ── Sidebar ─────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.title("🧠 Anki Analytics")
+    st.title("火 Anki Analytics")
     st.caption("Human Japanese Intermediate Shared")
     st.divider()
 
