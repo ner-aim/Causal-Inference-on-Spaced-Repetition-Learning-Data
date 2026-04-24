@@ -42,43 +42,28 @@ print(f"{len(revlog):,} rows")
 
 # ── experiment groups (tagged notes → cards → revlog) ──────────────────────
 print("Exporting experiment data...", end=" ")
-notes = pd.read_sql(
-    "SELECT id, tags FROM notes WHERE tags LIKE '%exp::%'", con
+exp_start_ms = int(datetime(2026, 4, 24).timestamp() * 1000)
+exp_revlog = pd.read_sql(
+    """
+    SELECT r.id, r.cid, r.ease, r.ivl, r.factor, r.time, r.type,
+           CASE WHEN n.tags LIKE '%exp::treatment%' THEN 'treatment' ELSE 'control' END AS grp
+    FROM revlog r
+    JOIN cards c ON r.cid = c.id
+    JOIN notes n ON c.nid = n.id
+    WHERE n.tags LIKE '%exp::%'
+      AND r.id >= ?
+    """,
+    con, params=[exp_start_ms]
 )
-if len(notes) > 0:
-    notes["group"] = notes["tags"].apply(
-        lambda t: "treatment" if "exp::treatment" in t else "control"
-    )
-    note_ids      = notes["id"].tolist()
-    placeholders  = ",".join("?" * len(note_ids))
-    cards         = pd.read_sql(
-        f"SELECT id AS cid, nid FROM cards WHERE nid IN ({placeholders})",
-        con, params=note_ids
-    )
-    note_group = notes.set_index("id")["group"]
-    cards["group"] = cards["nid"].map(note_group)
-
-    from datetime import date
-    exp_start_ms = int(datetime(2026, 4, 24).timestamp() * 1000)
-    cid_list      = cards["cid"].tolist()
-    placeholders2 = ",".join("?" * len(cid_list))
-    exp_revlog    = pd.read_sql(
-        f"SELECT id, cid, ease, ivl, factor, time, type FROM revlog "
-        f"WHERE cid IN ({placeholders2}) AND id >= ?",
-        con, params=cid_list + [exp_start_ms]
-    )
-    if len(exp_revlog) > 0:
-        exp_revlog["ts"]          = pd.to_datetime(exp_revlog["id"], unit="ms")
-        exp_revlog["date"]        = exp_revlog["ts"].dt.date.astype(str)
-        exp_revlog["retained"]    = (exp_revlog["ease"] > 1).astype(int)
-        exp_revlog["ease_factor"] = exp_revlog["factor"] / 1000
-        exp_revlog["capped"]      = (exp_revlog["time"] == ANKI_CAP_MS).astype(int)
-        exp_revlog = exp_revlog.merge(cards[["cid", "group"]], on="cid", how="left")
-    exp_revlog.to_parquet(OUTPUT_DIR / "experiment_revlog.parquet", index=False)
-    print(f"{len(exp_revlog):,} experiment rows")
-else:
-    pd.DataFrame().to_parquet(OUTPUT_DIR / "experiment_revlog.parquet", index=False)
-    print("no tagged notes found")
+if len(exp_revlog) > 0:
+    exp_revlog = exp_revlog.rename(columns={"grp": "group"})
+    exp_revlog["ts"]          = pd.to_datetime(exp_revlog["id"], unit="ms")
+    exp_revlog["date"]        = exp_revlog["ts"].dt.date.astype(str)
+    exp_revlog["retained"]    = (exp_revlog["ease"] > 1).astype(int)
+    exp_revlog["ease_factor"] = exp_revlog["factor"] / 1000
+    exp_revlog["capped"]      = (exp_revlog["time"] == ANKI_CAP_MS).astype(int)
+exp_revlog.to_parquet(OUTPUT_DIR / "experiment_revlog.parquet", index=False)
+print(f"{len(exp_revlog):,} experiment rows")
 
 con.close()
 

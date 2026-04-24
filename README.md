@@ -205,11 +205,11 @@ My retention is excellent across the board (99.2%). The meaningful variation in 
 
 ---
 
-## 60-Day A/B Experiment — Mnemonic Hints on Hard Cards (Active)
+## 60-Day A/B Experiment — Read Aloud vs Silent Review (Active)
 
 **Status: RUNNING** — started April 2026, ends ~June 2026
 
-**Files:** `assign_experiment_tags.py` · `experiment_tags_import.txt` · `experiment_assignment_log.csv`
+**Files:** `assign_experiment_tags.py` · `experiment_tags_import.txt` · `experiment_assignment_log.csv` · `mark_treatment_cards.py`
 
 ### Design
 
@@ -217,11 +217,13 @@ My retention is excellent across the board (99.2%). The meaningful variation in 
 |---|---|---|
 | Tag | `exp::treatment` | `exp::control` |
 | Notes | 1,745 | 1,745 |
-| Intervention | Manually written mnemonic hints added to card fields | No change — reviewed as normal |
+| Intervention | Card marked with ★ — I read the sentence out loud before rating | No change — reviewed silently as normal |
 | Assignment | Random (seed=42), 50/50 split across all 3,490 notes in the deck | |
 
+The `★` marker was added to the English field of all treatment cards using `mark_treatment_cards.py`, which writes directly to the Anki SQLite database. The marker is the only visible difference between groups — no content was changed.
+
 ### Research Question
-Does adding a mnemonic hint to a card cause a measurable reduction in lapse rate and response time over a 60-day window, compared to identical cards reviewed without hints?
+Does reading a sentence card out loud during review cause a measurable reduction in lapse rate and response time over a 60-day window, compared to identical cards reviewed silently?
 
 ### Causal Assumptions
 - **Stable Unit Treatment Value Assumption (SUTVA):** reviewing a treatment card does not affect my performance on control cards in the same session.

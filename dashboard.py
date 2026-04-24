@@ -54,7 +54,6 @@ def load_revlog() -> pd.DataFrame:
     if CLOUD_MODE:
         p = DATA_DIR / "revlog.parquet"
         if not p.exists():
-            st.error("No data file found. Run `export_data.py` locally and push `data/` to GitHub.")
             return pd.DataFrame()
         df = pd.read_parquet(p)
         df["date"] = pd.to_datetime(df["date"]).dt.date
@@ -65,8 +64,7 @@ def load_revlog() -> pd.DataFrame:
             "SELECT id, cid, ease, ivl, factor, time, type FROM revlog", con
         )
         con.close()
-    except Exception as e:
-        st.error(f"Cannot read database — is Anki open? Close Anki and refresh. ({e})")
+    except Exception:
         return pd.DataFrame()
     df["ts"]           = pd.to_datetime(df["id"], unit="ms")
     df["date"]         = df["ts"].dt.date
@@ -94,36 +92,21 @@ def load_experiment_data() -> tuple[pd.DataFrame, pd.DataFrame]:
 
     try:
         con = get_connection()
-    except Exception as e:
-        st.error(f"Cannot read database — is Anki open? Close Anki and refresh. ({e})")
+    except Exception:
         return pd.DataFrame(), pd.DataFrame()
 
-    # Get note IDs per group from tags
-    notes = pd.read_sql(
-        "SELECT id, tags FROM notes WHERE tags LIKE '%exp::%'", con
-    )
-    notes["group"] = notes["tags"].apply(
-        lambda t: "treatment" if "exp::treatment" in t else "control"
-    )
-
-    # Map note → cards
-    note_ids = notes["id"].tolist()
-    placeholders = ",".join("?" * len(note_ids))
-    cards = pd.read_sql(
-        f"SELECT id as cid, nid FROM cards WHERE nid IN ({placeholders})",
-        con, params=note_ids
-    )
-    note_group = notes.set_index("id")["group"]
-    cards["group"] = cards["nid"].map(note_group)
-
-    # Revlog since experiment start
     exp_start_ms = int(datetime.combine(EXPERIMENT_START, datetime.min.time()).timestamp() * 1000)
-    cid_list = cards["cid"].tolist()
-    placeholders2 = ",".join("?" * len(cid_list))
     revlog = pd.read_sql(
-        f"SELECT id, cid, ease, ivl, factor, time, type FROM revlog "
-        f"WHERE cid IN ({placeholders2}) AND id >= ?",
-        con, params=cid_list + [exp_start_ms]
+        """
+        SELECT r.id, r.cid, r.ease, r.ivl, r.factor, r.time, r.type,
+               CASE WHEN n.tags LIKE '%exp::treatment%' THEN 'treatment' ELSE 'control' END AS grp
+        FROM revlog r
+        JOIN cards c ON r.cid = c.id
+        JOIN notes n ON c.nid = n.id
+        WHERE n.tags LIKE '%exp::%'
+          AND r.id >= ?
+        """,
+        con, params=[exp_start_ms]
     )
     con.close()
 
@@ -135,7 +118,7 @@ def load_experiment_data() -> tuple[pd.DataFrame, pd.DataFrame]:
     revlog["retained"]    = (revlog["ease"] > 1).astype(int)
     revlog["ease_factor"] = revlog["factor"] / 1000
     revlog["capped"]      = (revlog["time"] == ANKI_CAP_MS).astype(int)
-    revlog = revlog.merge(cards[["cid", "group"]], on="cid", how="left")
+    revlog = revlog.rename(columns={"grp": "group"})
 
     treatment = revlog[revlog["group"] == "treatment"]
     control   = revlog[revlog["group"] == "control"]
@@ -211,13 +194,13 @@ with tab_overview:
         "PSM — Does morning review improve retention?": ("No effect (−0.07 pp)",   "High",     "✅"),
         "Survival — Do harder cards lapse sooner?":     ("Yes — 7.5% vs 0.4%",     "High",     "✅"),
         "PSM v2 — Are morning hard reviews slower?":    ("+1,084 ms (p=0.005)",    "Moderate", "⚠️"),
-        "A/B — Do mnemonics reduce lapses?":            ("Ongoing",                "TBD",      "🧪"),
+        "A/B — Does reading aloud reduce lapses?":       ("Ongoing",                "TBD",      "🧪"),
     }
     rows = [
         {"Analysis": k, "Result": v[0], "Confidence": v[1], "Status": v[2]}
         for k, v in results.items()
     ]
-    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(rows), width='stretch', hide_index=True)
 
     st.divider()
     st.subheader("Methodology")
@@ -253,7 +236,10 @@ with tab_eda:
     revlog = load_revlog()
 
     if revlog.empty:
-        st.warning("Close Anki desktop, then refresh the dashboard.", icon="⚠️")
+        if CLOUD_MODE:
+            st.error("No data file found. Run `export_data.py` locally and push `data/` to GitHub.")
+        else:
+            st.error("Cannot read database — is Anki open? Close Anki and refresh.")
         st.stop()
 
     # ── Live metrics ────────────────────────────────────────────────────────
@@ -291,7 +277,7 @@ with tab_eda:
     fig.update_yaxes(title_text="Reviews", row=1)
     fig.update_yaxes(title_text="Retention (%)", row=2)
     fig.update_layout(height=450, margin=dict(t=40, b=20), legend=dict(orientation="h"))
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
     # ── Heatmap + maturity ───────────────────────────────────────────────────
     col_l, col_r = st.columns(2)
@@ -312,7 +298,7 @@ with tab_eda:
             aspect="auto",
         )
         fig2.update_layout(height=260, margin=dict(t=20, b=20))
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width='stretch')
 
     with col_r:
         st.subheader("Retention by Card Maturity")
@@ -336,7 +322,7 @@ with tab_eda:
         fig3.update_yaxes(title="Retention (%)", range=[50, 105])
         fig3.update_xaxes(title="Interval at review")
         fig3.update_layout(height=260, margin=dict(t=20, b=20))
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width='stretch')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # TAB 3 — ITS
@@ -360,7 +346,7 @@ with tab_its:
     )
 
     if fig_path("fig4_its.png").exists():
-        st.image(str(fig_path("fig4_its.png")), use_container_width=True)
+        st.image(str(fig_path("fig4_its.png")), width='stretch')
     else:
         st.warning("Run `anki_causal_analysis.ipynb` to generate fig4_its.png")
 
@@ -388,10 +374,10 @@ with tab_psm:
         col_l, col_r = st.columns(2)
         with col_l:
             if fig_path("fig5_psm_overlap.png").exists():
-                st.image(str(fig_path("fig5_psm_overlap.png")), use_container_width=True)
+                st.image(str(fig_path("fig5_psm_overlap.png")), width='stretch')
         with col_r:
             if fig_path("fig6_balance.png").exists():
-                st.image(str(fig_path("fig6_balance.png")), use_container_width=True)
+                st.image(str(fig_path("fig6_balance.png")), width='stretch')
 
     with psm_tab2:
         st.subheader("Morning vs Evening — Response time on hard reviews (ef < 2.5)")
@@ -413,10 +399,10 @@ with tab_psm:
         col_l, col_r = st.columns(2)
         with col_l:
             if fig_path("v2_fig2_distributions.png").exists():
-                st.image(str(fig_path("v2_fig2_distributions.png")), use_container_width=True)
+                st.image(str(fig_path("v2_fig2_distributions.png")), width='stretch')
         with col_r:
             if fig_path("v2_fig3_comparison.png").exists():
-                st.image(str(fig_path("v2_fig3_comparison.png")), use_container_width=True)
+                st.image(str(fig_path("v2_fig3_comparison.png")), width='stretch')
 
 # ═══════════════════════════════════════════════════════════════════════════
 # TAB 5 — SURVIVAL
@@ -447,7 +433,7 @@ with tab_survival:
         st.dataframe(
             lapse_data.style.format({"Lapse rate": "{:.2f}%"})
                             .highlight_max(subset=["Lapse rate"], color="#ffcccc"),
-            use_container_width=True, hide_index=True
+            width='stretch', hide_index=True
         )
         st.caption(
             "Q1 cards (bottom ease-factor quartile) lapse at nearly 10× the rate of all other groups. "
@@ -463,15 +449,15 @@ with tab_survival:
         )
         fig_bar.update_traces(textposition="outside")
         fig_bar.update_layout(height=300, margin=dict(t=20, b=20), showlegend=False)
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, width='stretch')
 
     col_l, col_r = st.columns(2)
     with col_l:
         if fig_path("fig7_km_survival.png").exists():
-            st.image(str(fig_path("fig7_km_survival.png")), use_container_width=True)
+            st.image(str(fig_path("fig7_km_survival.png")), width='stretch')
     with col_r:
         if fig_path("fig8_cox_hr.png").exists():
-            st.image(str(fig_path("fig8_cox_hr.png")), use_container_width=True)
+            st.image(str(fig_path("fig8_cox_hr.png")), width='stretch')
 
     st.warning(
         "PH assumption mildly violated (Schoenfeld p = 0.025) — "
@@ -483,7 +469,7 @@ with tab_survival:
 # TAB 6 — A/B EXPERIMENT
 # ═══════════════════════════════════════════════════════════════════════════
 with tab_ab:
-    st.header("🧪 A/B Experiment — Mnemonic Hints")
+    st.header("🧪 A/B Experiment — Read Aloud")
 
     # ── Progress banner ──────────────────────────────────────────────────────
     days_elapsed   = (date.today() - EXPERIMENT_START).days
@@ -507,11 +493,11 @@ with tab_ab:
         with col_l:
             st.markdown("""
 **Research question:**
-Does adding a mnemonic hint to a card reduce its lapse rate and response time over 60 days?
+Does reading the sentence out loud during review reduce lapse rate and response time over 60 days?
 
 **Groups (randomised, seed=42):**
-- **Treatment** — 1,745 notes — mnemonic hints added manually
-- **Control** — 1,745 notes — reviewed as normal
+- **Treatment** — 1,745 notes — marked with ★, read sentence aloud before rating
+- **Control** — 1,745 notes — reviewed silently as normal
 
 **Primary outcomes:**
 1. Lapse rate (proportion of reviews where ease = Again)
@@ -535,8 +521,13 @@ PSM used as robustness check only.
     # ── Live results ──────────────────────────────────────────────────────────
     st.subheader("Live Results")
 
-    with st.spinner("Loading experiment data from Anki database..."):
+    with st.spinner("Loading experiment data..."):
         treatment_rev, control_rev = load_experiment_data()
+
+    if treatment_rev.empty and control_rev.empty and not CLOUD_MODE:
+        parquet_missing = not (DATA_DIR / "experiment_revlog.parquet").exists()
+        if not parquet_missing:
+            st.error("Cannot read database — is Anki open? Close Anki and refresh.")
 
     no_data = treatment_rev.empty and control_rev.empty
 
@@ -564,7 +555,7 @@ PSM used as robustness check only.
 
         col_t, col_c = st.columns(2)
         with col_t:
-            st.markdown(f"### 💊 Treatment (mnemonics)")
+            st.markdown(f"### ★ Treatment (read aloud)")
             m1, m2, m3 = st.columns(3)
             m1.metric("Reviews",    f"{t_stats['reviews']:,}")
             m2.metric("Lapse rate", f"{t_stats['lapse_rate']:.2f}%" if t_stats['lapse_rate'] is not None else "—")
@@ -623,7 +614,7 @@ PSM used as robustness check only.
                 labels={"lapse_rate": "Lapse rate (%)", "date": "Date", "group": "Group"},
             )
             fig_daily.update_layout(height=350, margin=dict(t=20, b=20))
-            st.plotly_chart(fig_daily, use_container_width=True)
+            st.plotly_chart(fig_daily, width='stretch')
 
         # ── Response time distributions ────────────────────────────────────────
         st.subheader("Response Time Distribution")
@@ -650,7 +641,7 @@ PSM used as robustness check only.
                 barmode="overlay", height=350, margin=dict(t=40, b=20),
                 legend=dict(orientation="h")
             )
-            st.plotly_chart(fig_rt, use_container_width=True)
+            st.plotly_chart(fig_rt, width='stretch')
         else:
             st.info("Not enough reviews yet to plot distributions.", icon="⏳")
 
@@ -674,16 +665,19 @@ PSM used as robustness check only.
                 t_total   = len(treatment_rev)
                 c_total   = len(control_rev)
                 if t_total > 0 and c_total > 0:
-                    from statsmodels.stats.proportion import proportions_ztest
-                    z, p = proportions_ztest(
-                        [t_lapses, c_lapses], [t_total, c_total]
-                    )
-                    st.metric("z-statistic", f"{z:.3f}")
-                    st.metric("p-value", f"{p:.4f}")
-                    if p < 0.05:
-                        st.success("Significant at α=0.05", icon="✅")
+                    if t_lapses + c_lapses == 0:
+                        st.info("No lapses recorded yet — test not applicable.", icon="⏳")
                     else:
-                        st.info("Not yet significant", icon="⏳")
+                        from statsmodels.stats.proportion import proportions_ztest
+                        z, p = proportions_ztest(
+                            [t_lapses, c_lapses], [t_total, c_total]
+                        )
+                        st.metric("z-statistic", f"{z:.3f}")
+                        st.metric("p-value", f"{p:.4f}")
+                        if p < 0.05:
+                            st.success("Significant at α=0.05", icon="✅")
+                        else:
+                            st.info("Not yet significant", icon="⏳")
 
         with sig_cols[1]:
             st.markdown("**Response time — Mann-Whitney U**")
