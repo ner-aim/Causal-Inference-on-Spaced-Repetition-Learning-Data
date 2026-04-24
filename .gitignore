@@ -180,3 +180,11 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 /.claude
+
+# Anki database — never commit
+*.anki2
+*.anki21
+collection.media/
+
+# Executed notebooks (large, auto-generated)
+*_executed.ipynb
