@@ -126,7 +126,7 @@ with st.sidebar:
     days_remaining = max(0, EXPERIMENT_DAYS - days_elapsed)
     pct            = min(1.0, days_elapsed / EXPERIMENT_DAYS)
 
-    st.markdown("**A/B Experiment**")
+    st.markdown("**A/B Testing**")
     st.progress(pct, text=f"Day {days_elapsed} of {EXPERIMENT_DAYS}")
     c1, c2 = st.columns(2)
     c1.metric("Elapsed",   f"{days_elapsed}d")
@@ -146,7 +146,7 @@ with st.sidebar:
 
 # ── Tabs ─────────────────────────────────────────────────────────────────────
 tab_ab, tab_findings, tab_data = st.tabs([
-    "🧪 A/B Experiment",
+    "🧪 A/B Test",
     "📊 Findings",
     "🔍 Raw Data",
 ])
