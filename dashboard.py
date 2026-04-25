@@ -140,7 +140,7 @@ with st.sidebar:
             meta = pd.read_parquet(meta_p)
             exported_at = pd.to_datetime(meta["exported_at"].iloc[0])
             st.caption(f"Last export: {exported_at.strftime('%b %d %H:%M')}")
-        st.caption("Cloud mode — run `export_data.py` to update")
+        # st.caption("Cloud mode — run `export_data.py` to update")
     else:
         st.caption("Live DB · refreshes every 5 min")
 
