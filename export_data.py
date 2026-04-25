@@ -33,7 +33,7 @@ revlog["ts"]          = pd.to_datetime(revlog["id"], unit="ms")
 revlog["date"]        = revlog["ts"].dt.date.astype(str)
 revlog["hour"]        = revlog["ts"].dt.hour
 revlog["dow"]         = revlog["ts"].dt.dayofweek
-revlog["retained"]    = (revlog["ease"] > 1).astype(int)
+revlog["retained"]    = (revlog["ease"] > 2).astype(int)
 revlog["ease_factor"] = revlog["factor"] / 1000
 revlog["time_s"]      = revlog["time"] / 1000
 revlog["capped"]      = (revlog["time"] == ANKI_CAP_MS).astype(int)
@@ -59,7 +59,7 @@ if len(exp_revlog) > 0:
     exp_revlog = exp_revlog.rename(columns={"grp": "group"})
     exp_revlog["ts"]          = pd.to_datetime(exp_revlog["id"], unit="ms")
     exp_revlog["date"]        = exp_revlog["ts"].dt.date.astype(str)
-    exp_revlog["retained"]    = (exp_revlog["ease"] > 1).astype(int)
+    exp_revlog["retained"]    = (exp_revlog["ease"] > 2).astype(int)
     exp_revlog["ease_factor"] = exp_revlog["factor"] / 1000
     exp_revlog["capped"]      = (exp_revlog["time"] == ANKI_CAP_MS).astype(int)
 exp_revlog.to_parquet(OUTPUT_DIR / "experiment_revlog.parquet", index=False)
