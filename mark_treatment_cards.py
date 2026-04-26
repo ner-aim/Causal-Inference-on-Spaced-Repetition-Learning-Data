@@ -19,8 +19,8 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 DB_PATH = Path(r"C:\Users\sid99\AppData\Roaming\Anki2\Pottapatri\collection.anki2")
-MARKER  = "★ "          # prepended to the English Meaning field
-MEANING_FIELD = 2        # field index: 0=UniqueKey, 1=WrittenForm, 2=Meaning, 3=Pronunciation
+MARKER        = "★ "     # prepended to marked fields
+MARK_FIELDS   = [1, 2]   # 1=WrittenForm (Japanese), 2=Meaning (English)
 FIELD_SEP = "\x1f"
 
 UNDO = "--undo" in sys.argv
@@ -54,27 +54,28 @@ def main():
     now     = int(time.time())
 
     for note_id, flds_raw in rows:
-        fields = flds_raw.split(FIELD_SEP)
+        fields   = flds_raw.split(FIELD_SEP)
+        changed  = False
 
-        if UNDO:
-            if fields[MEANING_FIELD].startswith(MARKER):
-                fields[MEANING_FIELD] = fields[MEANING_FIELD][len(MARKER):]
-                updated += 1
+        for idx in MARK_FIELDS:
+            if UNDO:
+                if fields[idx].startswith(MARKER):
+                    fields[idx] = fields[idx][len(MARKER):]
+                    changed = True
             else:
-                skipped += 1
-        else:
-            if not fields[MEANING_FIELD].startswith(MARKER):
-                fields[MEANING_FIELD] = MARKER + fields[MEANING_FIELD]
-                updated += 1
-            else:
-                skipped += 1
+                if not fields[idx].startswith(MARKER):
+                    fields[idx] = MARKER + fields[idx]
+                    changed = True
 
-        if updated > 0:
+        if changed:
+            updated += 1
             new_flds = FIELD_SEP.join(fields)
             con.execute(
                 "UPDATE notes SET flds=?, mod=?, usn=-1 WHERE id=?",
                 (new_flds, now, note_id)
             )
+        else:
+            skipped += 1
 
     con.commit()
     con.close()
