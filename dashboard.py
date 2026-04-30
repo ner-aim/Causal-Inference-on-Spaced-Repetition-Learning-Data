@@ -145,10 +145,11 @@ with st.sidebar:
         st.caption("Live DB · refreshes every 5 min")
 
 # ── Tabs ─────────────────────────────────────────────────────────────────────
-tab_ab, tab_findings, tab_data = st.tabs([
+tab_ab, tab_findings, tab_data, tab_other = st.tabs([
     "🧪 A/B Test",
     "📊 Findings",
     "🔍 Raw Data",
+    "🔬 Other Tests",
 ])
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -462,3 +463,163 @@ with tab_data:
         fig3.update_xaxes(title="Interval at review")
         fig3.update_layout(height=260, margin=dict(t=20, b=20))
         st.plotly_chart(fig3, width='stretch')
+
+# ═════════════════════════════════════════════════════════════════════════════
+# TAB 4 — OTHER TESTS
+# ═════════════════════════════════════════════════════════════════════════════
+with tab_other:
+    st.header("🔬 Other Tests")
+    st.caption(
+        "Supplementary methods for small-sample experiments. "
+        "These sit alongside — not instead of — the pre-registered analysis in the A/B tab."
+    )
+
+    with st.spinner("Loading experiment data..."):
+        t_rev, c_rev = load_experiment_data()
+
+    if t_rev.empty and c_rev.empty:
+        st.info("No experiment data yet. Come back after your first review session.", icon="⏳")
+    else:
+        t_n      = len(t_rev)
+        c_n      = len(c_rev)
+        t_lapses = int((t_rev["retained"] == 0).sum())
+        c_lapses = int((c_rev["retained"] == 0).sum())
+        t_trim   = t_rev[t_rev["capped"] == 0]["time"].values
+        c_trim   = c_rev[c_rev["capped"] == 0]["time"].values
+
+        # ── 1. Bayesian A/B ───────────────────────────────────────────────────
+        st.subheader("1 · Bayesian A/B Test")
+        st.markdown(
+            "Uses a Beta-Binomial conjugate model with a uniform prior. "
+            "Draws 200k samples from each group's posterior to estimate "
+            "the probability that treatment outperforms control."
+        )
+
+        if t_lapses + c_lapses == 0:
+            st.info("No lapses recorded yet — come back once lapses appear.", icon="⏳")
+        else:
+            rng = np.random.default_rng(42)
+            draws = 200_000
+
+            # Lapse rate posteriors: Beta(1 + lapses, 1 + non-lapses)
+            p_t = rng.beta(1 + t_lapses, 1 + (t_n - t_lapses), size=draws)
+            p_c = rng.beta(1 + c_lapses, 1 + (c_n - c_lapses), size=draws)
+
+            prob_t_better  = float(np.mean(p_t < p_c))   # treatment lapse < control lapse = better
+            prob_c_better  = float(np.mean(p_c < p_t))
+            lift           = (p_c - p_t) / p_c            # relative reduction in lapse rate
+            lift_median    = float(np.median(lift))
+            lift_ci        = np.quantile(lift, [0.05, 0.95])
+
+            b1, b2, b3 = st.columns(3)
+            b1.metric("P(Treatment better)", f"{prob_t_better:.1%}")
+            b2.metric("P(Control better)",   f"{prob_c_better:.1%}")
+            b3.metric("Expected lapse reduction", f"{lift_median:+.1%}",
+                      help="Median relative reduction vs control (90% CI below)")
+
+            st.caption(f"90% credible interval on lapse reduction: "
+                       f"[{lift_ci[0]:+.1%}, {lift_ci[1]:+.1%}]")
+
+            # Posterior distribution chart
+            fig_bayes = go.Figure()
+            fig_bayes.add_trace(go.Histogram(
+                x=p_t, name="Treatment", opacity=0.6,
+                marker_color=BLUE, nbinsx=80, histnorm="probability density",
+            ))
+            fig_bayes.add_trace(go.Histogram(
+                x=p_c, name="Control", opacity=0.6,
+                marker_color=ORANGE, nbinsx=80, histnorm="probability density",
+            ))
+            fig_bayes.update_xaxes(title="Lapse rate")
+            fig_bayes.update_yaxes(title="Posterior density")
+            fig_bayes.update_layout(
+                barmode="overlay", height=320,
+                margin=dict(t=20, b=20), legend=dict(orientation="h"),
+                title="Posterior distributions of lapse rate per group",
+            )
+            st.plotly_chart(fig_bayes, width='stretch')
+
+            # Decision rule
+            if prob_t_better >= 0.95:
+                st.success(
+                    f"Treatment has a **{prob_t_better:.1%}** chance of being better — "
+                    "meets the 95% threshold.", icon="✅"
+                )
+            elif prob_t_better >= 0.80:
+                st.warning(
+                    f"Treatment has a **{prob_t_better:.1%}** chance of being better — "
+                    "promising but below the 95% threshold.", icon="⚠️"
+                )
+            else:
+                st.info(
+                    f"Treatment has a **{prob_t_better:.1%}** chance of being better — "
+                    "no strong signal yet.", icon="⏳"
+                )
+
+        st.divider()
+
+        # ── 2. Sequential Testing ─────────────────────────────────────────────
+        st.subheader("2 · Sequential Testing — Planned Checkpoints")
+        st.markdown(
+            "Alpha is split across 4 planned looks (Bonferroni). "
+            "A checkpoint fires only when the accumulated review count crosses its threshold. "
+            "Do **not** act on results between checkpoints."
+        )
+
+        DAILY_EACH   = 56
+        CHECKPOINTS  = [14, 28, 42, 60]
+        ALPHA        = 0.05
+        alpha_adj    = ALPHA / len(CHECKPOINTS)   # Bonferroni
+        from scipy.stats import norm as sp_norm
+        z_crit       = sp_norm.ppf(1 - alpha_adj / 2)
+
+        rows_seq = []
+        for day in CHECKPOINTS:
+            n_needed = DAILY_EACH * day
+            reached  = min(t_n, c_n) >= n_needed
+            rows_seq.append({
+                "Day": day,
+                "Reviews needed / group": f"{n_needed:,}",
+                "Current reviews / group": f"{min(t_n, c_n):,}",
+                "Reached": "✅ Yes" if reached else "⏳ Not yet",
+                "|z| threshold": f"{z_crit:.2f}",
+            })
+
+        st.dataframe(pd.DataFrame(rows_seq), hide_index=True, width='stretch')
+
+        # Run the test at whichever checkpoint we've reached
+        from statsmodels.stats.proportion import proportions_ztest as pzt
+        reached_days = [cp for cp in CHECKPOINTS if min(t_n, c_n) >= DAILY_EACH * cp]
+
+        if not reached_days:
+            days_to_next = CHECKPOINTS[0]
+            reviews_needed = DAILY_EACH * days_to_next - min(t_n, c_n)
+            st.info(
+                f"First checkpoint at day {days_to_next} — "
+                f"need ~{reviews_needed:,} more reviews per group.",
+                icon="⏳"
+            )
+        else:
+            latest = max(reached_days)
+            st.markdown(f"**Latest checkpoint reached: Day {latest}**")
+
+            if t_lapses + c_lapses == 0:
+                st.info("No lapses recorded yet.", icon="⏳")
+            else:
+                z_stat, p_seq = pzt([t_lapses, c_lapses], [t_n, c_n])
+                z_abs = abs(z_stat)
+                col1, col2, col3 = st.columns(3)
+                col1.metric("|z| statistic",  f"{z_abs:.3f}")
+                col2.metric("Adjusted threshold", f"{z_crit:.2f}")
+                col3.metric("p-value (unadjusted)", f"{p_seq:.4f}")
+
+                if z_abs >= z_crit:
+                    st.success(
+                        f"|z| = {z_abs:.2f} ≥ {z_crit:.2f} — "
+                        "crosses the sequential stopping boundary.", icon="✅"
+                    )
+                else:
+                    st.info(
+                        f"|z| = {z_abs:.2f} < {z_crit:.2f} — "
+                        "does not cross the boundary yet. Continue the experiment.", icon="⏳"
+                    )
