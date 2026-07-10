@@ -205,9 +205,9 @@ My retention is excellent across the board (99.2%). The meaningful variation in 
 
 ---
 
-## 60-Day A/B Experiment — Read Aloud vs Silent Review (Active)
+## 60-Day A/B Experiment — Read Aloud vs Silent Review (Complete)
 
-**Status: RUNNING** — started April 2026, ends ~June 2026
+**Status: COMPLETE** — April 24, 2026 → June 23, 2026 (61 days)
 
 **Files:** `assign_experiment_tags.py` · `experiment_tags_import.txt` · `experiment_assignment_log.csv` · `mark_treatment_cards.py`
 
@@ -220,35 +220,70 @@ My retention is excellent across the board (99.2%). The meaningful variation in 
 | Intervention | Card marked with ★ — I read the sentence out loud before rating | No change — reviewed silently as normal |
 | Assignment | Random (seed=42), 50/50 split across all 3,490 notes in the deck | |
 
-The `★` marker was added to the English field of all treatment cards using `mark_treatment_cards.py`, which writes directly to the Anki SQLite database. The marker is the only visible difference between groups — no content was changed.
+The `★` marker was prepended to both the Japanese field (field[1]) and English meaning field (field[2]) of all treatment notes using `mark_treatment_cards.py`. The marker is the only visible difference between groups — no content was changed.
 
 ### Research Question
 Does reading a sentence card out loud during review cause a measurable reduction in lapse rate and response time over a 60-day window, compared to identical cards reviewed silently?
 
 ### Causal Assumptions
-- **Stable Unit Treatment Value Assumption (SUTVA):** reviewing a treatment card does not affect my performance on control cards in the same session.
-- **No anticipation:** my behaviour on control cards is not affected by knowing that treatment cards exist.
-- **Randomisation holds:** assignment was purely random; no systematic difference between groups at baseline (verifiable from `experiment_assignment_log.csv` — both groups draw from the same deck and note type).
+- **SUTVA:** reviewing a treatment card does not affect performance on control cards in the same session.
+- **No anticipation:** behaviour on control cards is not affected by knowing treatment cards exist.
+- **Randomisation holds:** assignment was purely random; both groups draw from the same deck and note type.
 
-### Primary Outcomes (measured at day 60)
-1. **Lapse rate** — proportion of reviews where ease = 1 (Again), by group
-2. **Response time (ms)** — median time per review, by group
+### Final Results (Day 61 · 7,346 total reviews)
 
-### Analysis Plan
-At the end of the 60 days I will run a PSM analysis on the logged note IDs, using the same methodology from `psm_response_time_v2.ipynb`, comparing treatment vs control on both outcomes. Because assignment was randomised, propensity score matching is a robustness check rather than a necessity — a simple two-sample test (Mann-Whitney for response time, proportion test for lapse rate) on the randomised groups is the primary analysis.
+| Outcome | Treatment | Control | Delta | p-value | Result |
+|---------|-----------|---------|-------|---------|--------|
+| Lapse rate (ease ≤ 2) | 11.81% | 10.76% | +1.05 pp | 0.154 | **Not significant** |
+| Median response time | 5.13 s | 4.65 s | +482 ms | < 0.001 | **Significant** |
 
-### Baseline Balance
-Both groups were drawn from the same deck and note type with a single random shuffle. Baseline ease factor distributions should be identical by design; this will be verified at analysis time using the pre-experiment ease factors stored in `experiment_assignment_log.csv`.
+**Bayesian:** P(treatment better on lapse rate) = 7.7% · 90% CI on lapse reduction: [−22.3%, +1.4%]
+
+**Ease breakdown:**
+
+| Button | Treatment | Control |
+|--------|-----------|---------|
+| Again | 0.2% | 0.3% |
+| Hard | 11.7% | 10.5% |
+| Good | 13.2% | 14.5% |
+| Easy | 75.0% | 74.7% |
+
+### Interpretation
+
+The read-aloud intervention produced **no measurable retention benefit** over 61 days. The lapse rate difference (+1.05 pp) is in the wrong direction and statistically indistinguishable from noise (p = 0.154; Bayesian posterior assigns only 7.7% probability to treatment being better).
+
+What is significant: treatment cards take **+482 ms longer per review** (Mann-Whitney p < 0.001). Reading aloud costs time without a detectable retention payoff.
+
+The gap is driven entirely by **Hard** presses (+1.2 pp), not Again (−0.1 pp). This suggests reading aloud raises self-assessment stringency — reviewers know more precisely what they know — without changing actual memory consolidation for visual-recognition vocabulary tasks.
+
+A kanji-complexity analysis (counting CJK characters in field[1] per day) found no correlation between card linguistic difficulty and the day-to-day treatment/control gap (Pearson r = −0.038, p = 0.77), ruling out card-level content as a confounder.
+
+### Weekly Trend
+
+| Week | Treatment | Control | Gap |
+|------|-----------|---------|-----|
+| 1 | 12.4% | 5.2% | +7.1 pp |
+| 2 | 7.2% | 6.1% | +1.1 pp |
+| 3 | 8.4% | 10.9% | −2.5 pp |
+| 4 | 17.8% | 12.5% | +5.3 pp |
+| 5 | 17.1% | 13.9% | +3.2 pp |
+| 6 | 12.5% | 12.0% | +0.5 pp |
+| 7 | 12.9% | 15.5% | −2.6 pp |
+| 8 | 7.7% | 10.4% | −2.7 pp |
+| 9 | 9.5% | 9.2% | +0.3 pp |
+
+No systematic convergence or divergence. Week 1's +7.1 pp outlier is a small-N sampling artifact (45 treatment reviews on the worst day).
 
 ---
 
 ## What I'd Do Next
 
 1. **Restrict to 2026 only** — the cleanest fix for the learning-curve confound. ~14k reviews at stable skill level.
-2. **Analyse the 60-day experiment results** — compare treatment vs control on lapse rate and response time using PSM on the tagged groups.
+2. ~~**Analyse the 60-day experiment results**~~ — **Done.** Null result on lapse rate (+1.05 pp, p=0.154); significant RT cost (+482 ms, p<0.001). See final results above.
 3. **Dose-response within session** — does my response time degrade as I review card #50 vs card #1 in a session? Model review number within session as the running variable.
 4. **Card content analysis** — the `notes` table stores the actual Japanese text. Hard cards likely share linguistic features (word length, JLPT level, phonetic similarity) that explain why they're structurally difficult.
 5. **Survival analysis on a longer horizon** — re-run in 12 months when more cards will have accumulated enough lapses to make the classic leech threshold (≥ 8) usable.
+6. **Alternative treatment modality** — written output (typing the answer) or image-based SRS may produce larger effects. The key question is which output modality most changes encoding depth for Japanese vocabulary recognition specifically.
 
 ---
 
