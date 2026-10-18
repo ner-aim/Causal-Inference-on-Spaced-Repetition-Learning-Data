@@ -1,0 +1,11 @@
+# Versions the audit was run with (Python 3.11.9). The audit does not change the repo's own requirements.txt.
+numpy==2.3.4
+pandas==2.3.3
+scipy==1.16.3
+scikit-learn==1.7.2
+statsmodels==0.14.5
+matplotlib==3.10.7
+joblib==1.5.2
+lifelines==0.30.3
+pyarrow          # s6_cloud_branch.py reads data/revlog.parquet; any recent version
+tzdata           # America/New_York on Windows

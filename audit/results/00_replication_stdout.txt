@@ -1,0 +1,59 @@
+   analysis                           quantity     reported   reproduced  tolerance match                                                            source
+     PSM v2              hard reviews (ef<2.5)  4252.000000  4252.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 2
+     PSM v2               morning hard reviews   319.000000   319.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 2
+     PSM v2               evening hard reviews  3933.000000  3933.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 2
+     PSM v2                      capped at 60s   214.000000   214.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 2
+     PSM v2             after excluding capped  4038.000000  4038.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 4
+     PSM v2            morning after exclusion   309.000000   309.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 4
+     PSM v2            PS model train accuracy     0.923000     0.923477   0.000500  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                         PS coef ef    -0.012500    -0.012489   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                    PS coef log_ivl     0.033600     0.033560   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2             PS coef log_days_since     0.044700     0.044737   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                  PS coef month_idx     0.031000     0.031047   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                   PS mean, evening     0.076500     0.076480   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                   PS mean, morning     0.077000     0.076972   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                    PS max, evening     0.097400     0.097443   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                    PS max, morning     0.094000     0.093968   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                    PS min, evening     0.060300     0.060290   0.000050  PASS                        psm_response_time_v2_executed.ipynb cell 6
+     PSM v2                            caliper     0.017450     0.017447   0.000005  PASS                        psm_response_time_v2_executed.ipynb cell 7
+     PSM v2                      matched pairs   309.000000   309.000000   0.000000  PASS                        psm_response_time_v2_executed.ipynb cell 7
+     PSM v2       matched median, morning (ms)  5497.000000  5497.000000   0.500000  PASS                        psm_response_time_v2_executed.ipynb cell 7
+     PSM v2       matched median, evening (ms)  4413.000000  4413.000000   0.500000  PASS                        psm_response_time_v2_executed.ipynb cell 7
+     PSM v2                 ATE mean diff (ms)   508.000000   507.582524   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2               ATE median diff (ms)  1084.000000  1084.000000   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                   mean-diff CI low  -858.000000  -857.688754   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                  mean-diff CI high  1844.000000  1844.200162   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                 median-diff CI low   209.000000   208.975000   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                median-diff CI high  1924.000000  1924.000000   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                           t-test p     0.497900     0.497943   0.000050  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                     Mann-Whitney U 54044.000000 54044.000000   0.500000  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2                     Mann-Whitney p     0.004500     0.004510   0.000050  PASS                       psm_response_time_v2_executed.ipynb cell 12
+     PSM v2             SMD after matching: ef     0.014531     0.014531   0.000005  PASS                        psm_response_time_v2_executed.ipynb cell 8
+     PSM v2        SMD after matching: log_ivl     0.032767     0.032767   0.000005  PASS                        psm_response_time_v2_executed.ipynb cell 8
+     PSM v2 SMD after matching: log_days_since     0.095352     0.095352   0.000005  PASS                        psm_response_time_v2_executed.ipynb cell 8
+     PSM v2      SMD after matching: month_idx     0.116792     0.116792   0.000005  PASS                        psm_response_time_v2_executed.ipynb cell 8
+PSM Phase 3                   PSM dataset rows 21803.000000 21803.000000   0.000000  PASS                       anki_causal_analysis_executed.ipynb cell 14
+PSM Phase 3                       morning rows  1375.000000  1375.000000   0.000000  PASS                       anki_causal_analysis_executed.ipynb cell 14
+PSM Phase 3                       evening rows 20428.000000 20428.000000   0.000000  PASS                       anki_causal_analysis_executed.ipynb cell 14
+PSM Phase 3            PS model train accuracy     0.937000     0.936935   0.000500  PASS                       anki_causal_analysis_executed.ipynb cell 15
+PSM Phase 3                            caliper     0.030600     0.030613   0.000050  PASS                       anki_causal_analysis_executed.ipynb cell 17
+PSM Phase 3                      matched pairs  1375.000000  1375.000000   0.000000  PASS                       anki_causal_analysis_executed.ipynb cell 17
+PSM Phase 3                    ATE (retention)    -0.000700    -0.000727   0.000050  PASS                       anki_causal_analysis_executed.ipynb cell 19
+PSM Phase 3                        t statistic    -0.219000    -0.218978   0.000500  PASS                       anki_causal_analysis_executed.ipynb cell 19
+PSM Phase 3                           t-test p     0.826700     0.826683   0.000050  PASS                       anki_causal_analysis_executed.ipynb cell 19
+PSM Phase 3                   bootstrap CI low    -0.006500    -0.006545   0.000050  PASS                       anki_causal_analysis_executed.ipynb cell 19
+PSM Phase 3                  bootstrap CI high     0.005100     0.005091   0.000050  PASS                       anki_causal_analysis_executed.ipynb cell 19
+        DML                       hard reviews  4763.000000  4763.000000   0.000000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+        DML                            morning   530.000000   530.000000   0.000000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+        DML                            evening  4233.000000  4233.000000   0.000000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+  DML ridge                     theta (log RT)     0.138000     0.137956   0.000050  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+  DML ridge                                 SE     0.034400     0.034421   0.000050  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+  DML ridge                           ATE (ms)   767.000000   766.685493   0.500000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+  DML ridge                        CI low (ms)   379.000000   378.531897   0.500000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+  DML ridge                       CI high (ms)  1182.000000  1181.929727   0.500000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+    DML gbm                     theta (log RT)     0.163400     0.163393   0.000050  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+    DML gbm                           ATE (ms)   920.000000   919.963920   0.500000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+    DML gbm                        CI low (ms)   511.000000   510.530791   0.500000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+    DML gbm                       CI high (ms)  1359.000000  1358.840627   0.500000  PASS DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()
+
+56 PASS, 0 FAIL of 56 checks

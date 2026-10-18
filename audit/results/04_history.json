@@ -1,0 +1,210 @@
+{
+  "head": "e07e50d310bca7a957b600ab1c39da7a2dbf5d7d",
+  "status_short": "?? audit/",
+  "dashboard_diff_vs_head": "",
+  "n_commits": 28,
+  "distinct_messages": [
+    "Initial commit",
+    "New Project for Causal inference",
+    "Update dashboard.py",
+    "Updated Dashboard",
+    "Updated Experiment metrics",
+    "Updated Export data",
+    "Updated Files",
+    "Updated files",
+    "updated"
+  ],
+  "pickaxe": {
+    "leak": {
+      "git_log_S": [],
+      "git_log_i_G": []
+    },
+    "timing": {
+      "git_log_S": [],
+      "git_log_i_G": []
+    },
+    "shift": {
+      "git_log_S": [
+        "e07e50d 2026-07-10 updated",
+        "39624eb 2026-04-25 Updated Experiment metrics",
+        "cf7b6f0 2026-04-24 Updated Files",
+        "5a967f2 2026-04-24 New Project for Causal inference"
+      ],
+      "git_log_i_G": [
+        "e07e50d 2026-07-10 updated",
+        "39624eb 2026-04-25 Updated Experiment metrics",
+        "cf7b6f0 2026-04-24 Updated Files",
+        "5a967f2 2026-04-24 New Project for Causal inference"
+      ]
+    },
+    "lag": {
+      "git_log_S": [
+        "e07e50d 2026-07-10 updated",
+        "5a967f2 2026-04-24 New Project for Causal inference"
+      ],
+      "git_log_i_G": [
+        "e07e50d 2026-07-10 updated",
+        "5a967f2 2026-04-24 New Project for Causal inference"
+      ]
+    }
+  },
+  "shift_lag_hits_nonnotebook": [
+    "term=shift commit=e07e50d: 4 matching +/- lines (non-notebook files)",
+    "    +1. **Did a behavioral shift in September 2025 change my retention rate?** (Interrupted Time Series)",
+    "    +where `D_t = 1` after the intervention. Heteroscedasticity-robust standard errors (HC3). The intervention point was auto-detected as the date of the largest single-day r",
+    "    +The small negative level change suggests a behavioral shift around September 2025 \u2014 likely a period of inconsistent review or introduction of harder material \u2014 but the e",
+    "    +| ITS: Did Sep 2025 shift change retention? | Small negative level change (\u22121.4 pp) | Low \u2014 intervention detected algorithmically |",
+    "term=shift commit=39624eb: 1 matching +/- lines (non-notebook files)",
+    "    -        \"Intervention auto-detected at **September 13, 2025** \u2014 largest single-day volume shift.\"",
+    "term=shift commit=cf7b6f0: 1 matching +/- lines (non-notebook files)",
+    "    +        \"Intervention auto-detected at **September 13, 2025** \u2014 largest single-day volume shift.\"",
+    "term=shift commit=5a967f2: 2 matching +/- lines (non-notebook files)",
+    "    +I modelled my daily retention rate as a segmented regression with a level change (\u03b2\u2082) and slope change (\u03b2\u2083) at a detected intervention point. I used heteroscedasticity-r",
+    "    +| ITS: Did Sep 2025 shift change retention? | Small negative level change (\u22121.4 pp) | Low \u2014 intervention detected algorithmically, not pre-specified |",
+    "term=lag commit=e07e50d: 1 matching +/- lines (non-notebook files)",
+    "    +- `retained = (ease > 1)` \u2014 binary retention flag",
+    "term=lag commit=5a967f2: 1 matching +/- lines (non-notebook files)",
+    "    +I connected to my Anki SQLite database, extracted the `cards`, `revlog`, and `decks` tables, and built a feature-engineered DataFrame. Key features I created: datetime c"
+  ],
+  "worktree_grep": [
+    {
+      "file": "assign_experiment_tags.py",
+      "where": "line 241",
+      "text": "3. File \u2192 Import  (or Ctrl+Shift+I)."
+    },
+    {
+      "file": "ANALYSIS.md",
+      "where": "line 17",
+      "text": "1. **Did a behavioral shift in September 2025 change my retention rate?** (Interrupted Time Series)"
+    },
+    {
+      "file": "ANALYSIS.md",
+      "where": "line 99",
+      "text": "where `D_t = 1` after the intervention. Heteroscedasticity-robust standard errors (HC3). The intervention point was auto-detected as the date of the l"
+    },
+    {
+      "file": "ANALYSIS.md",
+      "where": "line 111",
+      "text": "The small negative level change suggests a behavioral shift around September 2025 \u2014 likely a period of inconsistent review or introduction of harder m"
+    },
+    {
+      "file": "ANALYSIS.md",
+      "where": "line 356",
+      "text": "| ITS: Did Sep 2025 shift change retention? | Small negative level change (\u22121.4 pp) | Low \u2014 intervention detected algorithmically |"
+    },
+    {
+      "file": "README.md",
+      "where": "line 76",
+      "text": "I modelled my daily retention rate as a segmented regression with a level change (\u03b2\u2082) and slope change (\u03b2\u2083) at a detected intervention point. I used h"
+    },
+    {
+      "file": "README.md",
+      "where": "line 198",
+      "text": "| ITS: Did Sep 2025 shift change retention? | Small negative level change (\u22121.4 pp) | Low \u2014 intervention detected algorithmically, not pre-specified |"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 0 (markdown), line 14",
+      "text": "| 2 | Interrupted Time Series (ITS) | Did behavioural changes shift retention trends? |"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 9 (markdown), line 11",
+      "text": "**Intervention identification:** We detect natural breakpoints by looking for structural shifts in daily review volume (\u22652 std deviations) or multi-da"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 10 (code), line 9",
+      "text": "ts['prev_date'] = ts['date'].shift(1)"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 14 (code), line 24",
+      "text": "psm_df['prev_ts'] = psm_df.groupby('cid')['ts'].shift(1)"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 3 (code), line 15",
+      "text": "df['prev_ts'] = df.groupby('cid')['ts'].shift(1)"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "where": "cell 4 (code), line 6",
+      "text": "df['prev_ts']       = df.groupby('cid')['ts'].shift(1)"
+    }
+  ],
+  "worktree_grep_counts": {
+    "leak": 0,
+    "timing": 0,
+    "shift": 11,
+    "\\blag": 0
+  },
+  "token_pickaxe": {
+    "revlog.factor": [
+      "e07e50d 2026-07-10",
+      "39624eb 2026-04-25",
+      "cf7b6f0 2026-04-24",
+      "5a967f2 2026-04-24"
+    ],
+    "cards.factor": [
+      "e07e50d 2026-07-10",
+      "5a967f2 2026-04-24"
+    ],
+    "at review time": [
+      "e07e50d 2026-07-10",
+      "39624eb 2026-04-25",
+      "cf7b6f0 2026-04-24",
+      "5a967f2 2026-04-24"
+    ],
+    "current snapshot": [
+      "e07e50d 2026-07-10",
+      "5a967f2 2026-04-24"
+    ],
+    "point-in-time": [],
+    "days_since": [
+      "e07e50d 2026-07-10",
+      "5a967f2 2026-04-24"
+    ],
+    "lastIvl": [
+      "5a967f2 2026-04-24"
+    ],
+    ".shift(": [
+      "5a967f2 2026-04-24"
+    ],
+    "run_dml": [
+      "e07e50d 2026-07-10"
+    ]
+  },
+  "notebook_history": [
+    {
+      "file": "psm_response_time.ipynb",
+      "added in commit": "5a967f2 2026-04-24 13:59:56 -0400",
+      "commits touching it": 1,
+      "file mtime (Eastern)": "2026-04-23 15:14"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "added in commit": "5a967f2 2026-04-24 13:59:56 -0400",
+      "commits touching it": 1,
+      "file mtime (Eastern)": "2026-04-23 15:37"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "added in commit": "5a967f2 2026-04-24 13:59:56 -0400",
+      "commits touching it": 1,
+      "file mtime (Eastern)": "2026-04-23 14:44"
+    },
+    {
+      "file": "psm_response_time_executed.ipynb",
+      "added in commit": "5a967f2 2026-04-24 13:59:56 -0400",
+      "commits touching it": 1,
+      "file mtime (Eastern)": "2026-04-23 15:15"
+    },
+    {
+      "file": "psm_response_time_v2_executed.ipynb",
+      "added in commit": "5a967f2 2026-04-24 13:59:56 -0400",
+      "commits touching it": 1,
+      "file mtime (Eastern)": "2026-04-23 15:37"
+    }
+  ]
+}

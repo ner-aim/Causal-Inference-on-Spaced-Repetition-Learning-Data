@@ -1,0 +1,547 @@
+{
+  "meta": {
+    "db_path": "C:\\Users\\sid99\\AppData\\Local\\Temp\\claude\\C--Space-X-Documents-Claude-Anki-Project\\8a3702d7-6029-4002-975b-6ce903e36179\\scratchpad\\collection_snapshot.anki2",
+    "db_sha256": "9b30206f8a8ee9291544d7381af0fe2a666fc872fde831a334ff661eab311acd",
+    "db_bytes": 7159808,
+    "python": "3.11.9",
+    "numpy": "2.3.4",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "sklearn": "1.7.2",
+    "crt": 1738054800,
+    "n_revlog_total": 64089,
+    "n_after_cutoff": 52119
+  },
+  "n_checks": 56,
+  "n_fail": 0,
+  "checks": [
+    {
+      "analysis": "PSM v2",
+      "quantity": "hard reviews (ef<2.5)",
+      "reported": 4252.0,
+      "reproduced": 4252.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 2"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "morning hard reviews",
+      "reported": 319.0,
+      "reproduced": 319.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 2"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "evening hard reviews",
+      "reported": 3933.0,
+      "reproduced": 3933.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 2"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "capped at 60s",
+      "reported": 214.0,
+      "reproduced": 214.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 2"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "after excluding capped",
+      "reported": 4038.0,
+      "reproduced": 4038.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 4"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "morning after exclusion",
+      "reported": 309.0,
+      "reproduced": 309.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 4"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS model train accuracy",
+      "reported": 0.923,
+      "reproduced": 0.923477,
+      "tolerance": 0.0005,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS coef ef",
+      "reported": -0.0125,
+      "reproduced": -0.012489,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS coef log_ivl",
+      "reported": 0.0336,
+      "reproduced": 0.03356,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS coef log_days_since",
+      "reported": 0.0447,
+      "reproduced": 0.044737,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS coef month_idx",
+      "reported": 0.031,
+      "reproduced": 0.031047,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS mean, evening",
+      "reported": 0.0765,
+      "reproduced": 0.07648,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS mean, morning",
+      "reported": 0.077,
+      "reproduced": 0.076972,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS max, evening",
+      "reported": 0.0974,
+      "reproduced": 0.097443,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS max, morning",
+      "reported": 0.094,
+      "reproduced": 0.093968,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "PS min, evening",
+      "reported": 0.0603,
+      "reproduced": 0.06029,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 6"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "caliper",
+      "reported": 0.01745,
+      "reproduced": 0.017447,
+      "tolerance": 5e-06,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 7"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "matched pairs",
+      "reported": 309.0,
+      "reproduced": 309.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 7"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "matched median, morning (ms)",
+      "reported": 5497.0,
+      "reproduced": 5497.0,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 7"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "matched median, evening (ms)",
+      "reported": 4413.0,
+      "reproduced": 4413.0,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 7"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "ATE mean diff (ms)",
+      "reported": 508.0,
+      "reproduced": 507.582524,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "ATE median diff (ms)",
+      "reported": 1084.0,
+      "reproduced": 1084.0,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "mean-diff CI low",
+      "reported": -858.0,
+      "reproduced": -857.688754,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "mean-diff CI high",
+      "reported": 1844.0,
+      "reproduced": 1844.200162,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "median-diff CI low",
+      "reported": 209.0,
+      "reproduced": 208.975,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "median-diff CI high",
+      "reported": 1924.0,
+      "reproduced": 1924.0,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "t-test p",
+      "reported": 0.4979,
+      "reproduced": 0.497943,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "Mann-Whitney U",
+      "reported": 54044.0,
+      "reproduced": 54044.0,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "Mann-Whitney p",
+      "reported": 0.0045,
+      "reproduced": 0.00451,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 12"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "SMD after matching: ef",
+      "reported": 0.014531,
+      "reproduced": 0.014531,
+      "tolerance": 5e-06,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 8"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "SMD after matching: log_ivl",
+      "reported": 0.032767,
+      "reproduced": 0.032767,
+      "tolerance": 5e-06,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 8"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "SMD after matching: log_days_since",
+      "reported": 0.095352,
+      "reproduced": 0.095352,
+      "tolerance": 5e-06,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 8"
+    },
+    {
+      "analysis": "PSM v2",
+      "quantity": "SMD after matching: month_idx",
+      "reported": 0.116792,
+      "reproduced": 0.116792,
+      "tolerance": 5e-06,
+      "match": "PASS",
+      "source": "psm_response_time_v2_executed.ipynb cell 8"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "PSM dataset rows",
+      "reported": 21803.0,
+      "reproduced": 21803.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 14"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "morning rows",
+      "reported": 1375.0,
+      "reproduced": 1375.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 14"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "evening rows",
+      "reported": 20428.0,
+      "reproduced": 20428.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 14"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "PS model train accuracy",
+      "reported": 0.937,
+      "reproduced": 0.936935,
+      "tolerance": 0.0005,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 15"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "caliper",
+      "reported": 0.0306,
+      "reproduced": 0.030613,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 17"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "matched pairs",
+      "reported": 1375.0,
+      "reproduced": 1375.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 17"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "ATE (retention)",
+      "reported": -0.0007,
+      "reproduced": -0.000727,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 19"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "t statistic",
+      "reported": -0.219,
+      "reproduced": -0.218978,
+      "tolerance": 0.0005,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 19"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "t-test p",
+      "reported": 0.8267,
+      "reproduced": 0.826683,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 19"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "bootstrap CI low",
+      "reported": -0.0065,
+      "reproduced": -0.006545,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 19"
+    },
+    {
+      "analysis": "PSM Phase 3",
+      "quantity": "bootstrap CI high",
+      "reported": 0.0051,
+      "reproduced": 0.005091,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "anki_causal_analysis_executed.ipynb cell 19"
+    },
+    {
+      "analysis": "DML",
+      "quantity": "hard reviews",
+      "reported": 4763.0,
+      "reproduced": 4763.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML",
+      "quantity": "morning",
+      "reported": 530.0,
+      "reproduced": 530.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML",
+      "quantity": "evening",
+      "reported": 4233.0,
+      "reproduced": 4233.0,
+      "tolerance": 0.0,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML ridge",
+      "quantity": "theta (log RT)",
+      "reported": 0.138,
+      "reproduced": 0.137956,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML ridge",
+      "quantity": "SE",
+      "reported": 0.0344,
+      "reproduced": 0.034421,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML ridge",
+      "quantity": "ATE (ms)",
+      "reported": 767.0,
+      "reproduced": 766.685493,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML ridge",
+      "quantity": "CI low (ms)",
+      "reported": 379.0,
+      "reproduced": 378.531897,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML ridge",
+      "quantity": "CI high (ms)",
+      "reported": 1182.0,
+      "reproduced": 1181.929727,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML gbm",
+      "quantity": "theta (log RT)",
+      "reported": 0.1634,
+      "reproduced": 0.163393,
+      "tolerance": 5e-05,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML gbm",
+      "quantity": "ATE (ms)",
+      "reported": 920.0,
+      "reproduced": 919.96392,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML gbm",
+      "quantity": "CI low (ms)",
+      "reported": 511.0,
+      "reproduced": 510.530791,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    },
+    {
+      "analysis": "DML gbm",
+      "quantity": "CI high (ms)",
+      "reported": 1359.0,
+      "reproduced": 1358.840627,
+      "tolerance": 0.5,
+      "match": "PASS",
+      "source": "DML run of 2026-07-10 (conversation log) / dashboard.py run_dml()"
+    }
+  ],
+  "dml": {
+    "ridge": {
+      "theta": 0.13795637090055313,
+      "se": 0.034421293783246924,
+      "z": 4.007878720924122,
+      "p": 6.126656627101941e-05,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 766.6854929169134,
+      "ci_lo_ms": 378.53189706239635,
+      "ci_hi_ms": 1181.9297268848688
+    },
+    "gbm": {
+      "theta": 0.16339290092818518,
+      "se": 0.035431087768728595,
+      "z": 4.611568857120876,
+      "p": 3.996412291275242e-06,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 919.9639202815806,
+      "ci_lo_ms": 510.5307913710616,
+      "ci_hi_ms": 1358.8406266891054
+    }
+  }
+}

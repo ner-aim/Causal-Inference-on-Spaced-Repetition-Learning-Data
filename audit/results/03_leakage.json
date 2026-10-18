@@ -1,0 +1,961 @@
+{
+  "A1_dfactor_by_current_ease": [
+    {
+      "ease of THIS review": 1,
+      "mean": -185.6,
+      "std": 49.01274319994684,
+      "count": 250
+    },
+    {
+      "ease of THIS review": 2,
+      "mean": -146.36735335744615,
+      "std": 22.50820640444943,
+      "count": 6359
+    },
+    {
+      "ease of THIS review": 3,
+      "mean": -0.047581284694686754,
+      "std": 5.34331686825692,
+      "count": 6305
+    },
+    {
+      "ease of THIS review": 4,
+      "mean": 149.8797016601171,
+      "std": 5.37199097939137,
+      "count": 24938
+    }
+  ],
+  "A1_dfactor_by_previous_ease": [
+    {
+      "ease of PREVIOUS review": 2.0,
+      "mean": 20.611183355006503,
+      "std": 130.58345585760802,
+      "count": 7690
+    },
+    {
+      "ease of PREVIOUS review": 3.0,
+      "mean": 58.17429132753298,
+      "std": 120.92703180752618,
+      "count": 7126
+    },
+    {
+      "ease of PREVIOUS review": 4.0,
+      "mean": 94.94703941656537,
+      "std": 101.94799752625453,
+      "count": 23036
+    }
+  ],
+  "A2_ivl_by_ease": [
+    {
+      "ease": 1,
+      "rows": 345,
+      "share_ivl_negative": 1.0,
+      "median_ivl": -600.0,
+      "median_lastIvl": 9.0
+    },
+    {
+      "ease": 2,
+      "rows": 8241,
+      "share_ivl_negative": 0.0,
+      "median_ivl": 14.0,
+      "median_lastIvl": 11.0
+    },
+    {
+      "ease": 3,
+      "rows": 8217,
+      "share_ivl_negative": 0.0,
+      "median_ivl": 33.0,
+      "median_lastIvl": 14.0
+    },
+    {
+      "ease": 4,
+      "rows": 31883,
+      "share_ivl_negative": 0.0,
+      "median_ivl": 63.0,
+      "median_lastIvl": 19.0
+    }
+  ],
+  "A2_share_lastIvl_equals_previous_row_ivl": 0.998494135052309,
+  "A2_n": 37852,
+  "A3_hour_counts": [
+    {
+      "hour": 0,
+      "reviews_utc_clock": 2008,
+      "reviews_eastern_clock": 266
+    },
+    {
+      "hour": 1,
+      "reviews_utc_clock": 1874,
+      "reviews_eastern_clock": 59
+    },
+    {
+      "hour": 2,
+      "reviews_utc_clock": 2035,
+      "reviews_eastern_clock": 46
+    },
+    {
+      "hour": 3,
+      "reviews_utc_clock": 755,
+      "reviews_eastern_clock": 54
+    },
+    {
+      "hour": 4,
+      "reviews_utc_clock": 266,
+      "reviews_eastern_clock": 19
+    },
+    {
+      "hour": 5,
+      "reviews_utc_clock": 59,
+      "reviews_eastern_clock": 71
+    },
+    {
+      "hour": 6,
+      "reviews_utc_clock": 46,
+      "reviews_eastern_clock": 567
+    },
+    {
+      "hour": 7,
+      "reviews_utc_clock": 54,
+      "reviews_eastern_clock": 993
+    },
+    {
+      "hour": 8,
+      "reviews_utc_clock": 19,
+      "reviews_eastern_clock": 1609
+    },
+    {
+      "hour": 9,
+      "reviews_utc_clock": 8,
+      "reviews_eastern_clock": 3745
+    },
+    {
+      "hour": 10,
+      "reviews_utc_clock": 453,
+      "reviews_eastern_clock": 5226
+    },
+    {
+      "hour": 11,
+      "reviews_utc_clock": 835,
+      "reviews_eastern_clock": 6372
+    },
+    {
+      "hour": 12,
+      "reviews_utc_clock": 1149,
+      "reviews_eastern_clock": 6442
+    },
+    {
+      "hour": 13,
+      "reviews_utc_clock": 3505,
+      "reviews_eastern_clock": 5413
+    },
+    {
+      "hour": 14,
+      "reviews_utc_clock": 4810,
+      "reviews_eastern_clock": 5694
+    },
+    {
+      "hour": 15,
+      "reviews_utc_clock": 4946,
+      "reviews_eastern_clock": 5058
+    },
+    {
+      "hour": 16,
+      "reviews_utc_clock": 6883,
+      "reviews_eastern_clock": 4301
+    },
+    {
+      "hour": 17,
+      "reviews_utc_clock": 5700,
+      "reviews_eastern_clock": 4968
+    },
+    {
+      "hour": 18,
+      "reviews_utc_clock": 6079,
+      "reviews_eastern_clock": 4033
+    },
+    {
+      "hour": 19,
+      "reviews_utc_clock": 5058,
+      "reviews_eastern_clock": 2845
+    },
+    {
+      "hour": 20,
+      "reviews_utc_clock": 4985,
+      "reviews_eastern_clock": 1866
+    },
+    {
+      "hour": 21,
+      "reviews_utc_clock": 5193,
+      "reviews_eastern_clock": 1964
+    },
+    {
+      "hour": 22,
+      "reviews_utc_clock": 4452,
+      "reviews_eastern_clock": 1782
+    },
+    {
+      "hour": 23,
+      "reviews_utc_clock": 2917,
+      "reviews_eastern_clock": 696
+    }
+  ],
+  "A3_col_crt_utc": "2025-01-28T09:00:00",
+  "A3_col_crt_implied_utc_offset_hours_if_rollover_4am": -5.0,
+  "B_v2": {
+    "table": [
+      {
+        "pre-answer factor status": "NOT hard before this answer",
+        "evening": 996,
+        "morning": 74,
+        "total": 1070,
+        "evening %": 26.70957361222848,
+        "morning %": 23.948220064724918,
+        "total %": 26.498266468548785
+      },
+      {
+        "pre-answer factor status": "already hard before this answer",
+        "evening": 2733,
+        "morning": 235,
+        "total": 2968,
+        "evening %": 73.29042638777152,
+        "morning %": 76.05177993527508,
+        "total %": 73.50173353145121
+      }
+    ],
+    "ease_of_rows_that_entered": {
+      "1": 66,
+      "2": 1004
+    }
+  },
+  "B_dml": {
+    "table": [
+      {
+        "pre-answer factor status": "NOT hard before this answer",
+        "evening": 1145,
+        "morning": 140,
+        "total": 1285,
+        "evening %": 27.049373966454052,
+        "morning %": 26.41509433962264,
+        "total %": 26.97879487717825
+      },
+      {
+        "pre-answer factor status": "already hard before this answer",
+        "evening": 3088,
+        "morning": 390,
+        "total": 3478,
+        "evening %": 72.95062603354594,
+        "morning %": 73.58490566037736,
+        "total %": 73.02120512282175
+      }
+    ],
+    "ease_of_rows_that_entered": {
+      "1": 74,
+      "2": 1211
+    }
+  },
+  "B2_phase3_auc_log_ivl_vs_lapse": 0.9013760037969822,
+  "B2_phase3_crosstab": {
+    "ivl < 0": {
+      "retained = 0 (Again)": 184,
+      "retained = 1": 1659
+    },
+    "ivl > 0": {
+      "retained = 0 (Again)": 0,
+      "retained = 1": 19960
+    }
+  },
+  "C_fold_structure": [
+    {
+      "fold": 0,
+      "test rows": 953,
+      "% test rows whose CARD is in training": 80.06295907660021,
+      "% whose NOTE is in training": 89.71668415529905,
+      "% with a LATER review of the same card in training": 58.02728226652676,
+      "% with an EARLIER review of the same card in training": 55.71878279118573,
+      "% of training rows dated after the test fold's first row": 99.79002624671915
+    },
+    {
+      "fold": 1,
+      "test rows": 953,
+      "% test rows whose CARD is in training": 78.1741867785939,
+      "% whose NOTE is in training": 89.08709338929695,
+      "% with a LATER review of the same card in training": 53.72507869884575,
+      "% with an EARLIER review of the same card in training": 51.52151101783841,
+      "% of training rows dated after the test fold's first row": 100.0
+    },
+    {
+      "fold": 2,
+      "test rows": 953,
+      "% test rows whose CARD is in training": 77.75445960125919,
+      "% whose NOTE is in training": 87.61804826862539,
+      "% with a LATER review of the same card in training": 55.508919202518356,
+      "% with an EARLIER review of the same card in training": 53.62014690451207,
+      "% of training rows dated after the test fold's first row": 99.81627296587926
+    },
+    {
+      "fold": 3,
+      "test rows": 952,
+      "% test rows whose CARD is in training": 78.15126050420169,
+      "% whose NOTE is in training": 88.23529411764706,
+      "% with a LATER review of the same card in training": 52.62605042016807,
+      "% with an EARLIER review of the same card in training": 56.40756302521008,
+      "% of training rows dated after the test fold's first row": 99.97376016793493
+    },
+    {
+      "fold": 4,
+      "test rows": 952,
+      "% test rows whose CARD is in training": 81.40756302521008,
+      "% whose NOTE is in training": 89.60084033613445,
+      "% with a LATER review of the same card in training": 55.88235294117647,
+      "% with an EARLIER review of the same card in training": 57.66806722689075,
+      "% of training rows dated after the test fold's first row": 99.92128050380478
+    }
+  ],
+  "C_sample": {
+    "rows": 4763,
+    "cards": 1885,
+    "notes": 1217,
+    "reviews_per_card": 2.526790450928382,
+    "n_revlog_total": 64089
+  },
+  "C_cards_per_note_distribution": {
+    "3": 3490
+  },
+  "D_dml_designs": [
+    {
+      "learner": "ridge",
+      "design": "audited: row-level KFold, scaler on all rows",
+      "theta": 0.13795637090055313,
+      "ATE ms": 766.6854929169134,
+      "SE iid": 0.034421293783246924,
+      "SE cluster(card)": 0.035232389515734756,
+      "SE cluster(note)": 0.03521782777177839,
+      "p iid": 6.126656627101941e-05,
+      "p cluster(card)": 9.017513081986221e-05,
+      "p cluster(note)": 8.957186453361738e-05
+    },
+    {
+      "learner": "ridge",
+      "design": "row-level KFold, scaler fit inside each training fold",
+      "theta": 0.1379980993211488,
+      "ATE ms": 766.9337656344561,
+      "SE iid": 0.03442349770091604,
+      "SE cluster(card)": 0.03523516069416913,
+      "SE cluster(note)": 0.03521886092657503,
+      "p iid": 6.10192045410615e-05,
+      "p cluster(card)": 8.984812431262569e-05,
+      "p cluster(note)": 8.917529280071561e-05
+    },
+    {
+      "learner": "ridge",
+      "design": "folds grouped by note (no note in both train and test)",
+      "theta": 0.13804855623892454,
+      "ATE ms": 767.2339843663477,
+      "SE iid": 0.03449417467977523,
+      "SE cluster(card)": 0.03536041789048629,
+      "SE cluster(note)": 0.035378736453916815,
+      "p iid": 6.278721625098346e-05,
+      "p cluster(card)": 9.459935685646913e-05,
+      "p cluster(note)": 9.539306157057713e-05
+    },
+    {
+      "learner": "ridge",
+      "design": "folds grouped by card",
+      "theta": 0.13745913119802503,
+      "ATE ms": 763.7278494665142,
+      "SE iid": 0.03440517333359156,
+      "SE cluster(card)": 0.0352623532883171,
+      "SE cluster(note)": 0.035268827611068934,
+      "p iid": 6.461125571604697e-05,
+      "p cluster(card)": 9.691688104784262e-05,
+      "p cluster(note)": 9.720361400250564e-05
+    },
+    {
+      "learner": "ridge",
+      "design": "5 contiguous time blocks (test block never overlaps train in time)",
+      "theta": 0.05016445463078459,
+      "ATE ms": 266.6299941311875,
+      "SE iid": 0.03490050722806043,
+      "SE cluster(card)": 0.03601354433698126,
+      "SE cluster(note)": 0.03667120690176206,
+      "p iid": 0.1506168548613183,
+      "p cluster(card)": 0.16364004987427228,
+      "p cluster(note)": 0.1713270688345574
+    },
+    {
+      "learner": "gbm",
+      "design": "audited: row-level KFold, scaler on all rows",
+      "theta": 0.16339290092818518,
+      "ATE ms": 919.9639202815806,
+      "SE iid": 0.035431087768728595,
+      "SE cluster(card)": 0.03592267727646097,
+      "SE cluster(note)": 0.03548092372449819,
+      "p iid": 3.996412291275242e-06,
+      "p cluster(card)": 5.403962441145761e-06,
+      "p cluster(note)": 4.122845057048033e-06
+    },
+    {
+      "learner": "gbm",
+      "design": "row-level KFold, scaler fit inside each training fold",
+      "theta": 0.16358571791400847,
+      "ATE ms": 921.1407729437457,
+      "SE iid": 0.035424825442177635,
+      "SE cluster(card)": 0.03591699346589144,
+      "SE cluster(note)": 0.035475772778577205,
+      "p iid": 3.877791888239713e-06,
+      "p cluster(card)": 5.2498008942773366e-06,
+      "p cluster(note)": 4.00360106767458e-06
+    },
+    {
+      "learner": "gbm",
+      "design": "folds grouped by note (no note in both train and test)",
+      "theta": 0.15560805746509257,
+      "ATE ms": 872.638393389271,
+      "SE iid": 0.03574172243003352,
+      "SE cluster(card)": 0.03612979823736698,
+      "SE cluster(note)": 0.03591523626809647,
+      "p iid": 1.3387047428634134e-05,
+      "p cluster(card)": 1.655453759518622e-05,
+      "p cluster(note)": 1.4732691624769907e-05
+    },
+    {
+      "learner": "gbm",
+      "design": "folds grouped by card",
+      "theta": 0.15607963993859683,
+      "ATE ms": 875.4947608863408,
+      "SE iid": 0.03571575896026921,
+      "SE cluster(card)": 0.03607372056126911,
+      "SE cluster(note)": 0.03558611952165819,
+      "p iid": 1.2421828957390365e-05,
+      "p cluster(card)": 1.5136991858775575e-05,
+      "p cluster(note)": 1.1547022588943582e-05
+    },
+    {
+      "learner": "gbm",
+      "design": "5 contiguous time blocks (test block never overlaps train in time)",
+      "theta": 0.05821391861414129,
+      "ATE ms": 310.6729540001961,
+      "SE iid": 0.03296151066674252,
+      "SE cluster(card)": 0.033494506089761664,
+      "SE cluster(note)": 0.03361025801086465,
+      "p iid": 0.07737604752081521,
+      "p cluster(card)": 0.08220835690860202,
+      "p cluster(note)": 0.08326852079742893
+    }
+  ],
+  "E": {
+    "S0 audited (UTC clock, post-answer features)": {
+      "PSM v2": {
+        "n": 4038,
+        "n_morning": 309,
+        "n_evening": 3729,
+        "n_pairs": 309,
+        "audited_order": {
+          "mean_diff": 507.5825242718438,
+          "median_diff": 1084.0,
+          "p": 0.004509832410485089,
+          "n_pairs": 309,
+          "n_unique_controls": 262
+        },
+        "orders_stat": "median_diff",
+        "orders_mean": 1045.32,
+        "orders_sd": 160.69922215119774,
+        "orders_min": 629.0,
+        "orders_max": 1332.0,
+        "orders_share_p_lt_05": 0.92
+      },
+      "PSM Phase 3": {
+        "n": 21803,
+        "n_morning": 1375,
+        "n_evening": 20428,
+        "n_pairs": 1375,
+        "audited_order": {
+          "mean_diff": -0.0007272727272726875,
+          "median_diff": 0.0,
+          "p": 0.8266833478227441,
+          "n_pairs": 1375,
+          "n_unique_controls": 952
+        },
+        "orders_stat": "mean_diff",
+        "orders_mean": -0.0007272727272726875,
+        "orders_sd": 0.0,
+        "orders_min": -0.0007272727272726875,
+        "orders_max": -0.0007272727272726875,
+        "orders_share_p_lt_05": 0.0
+      },
+      "DML ridge": {
+        "n": 4763,
+        "n_morning": 530,
+        "theta": 0.13795637090055313,
+        "ate_ms": 766.6854929169134,
+        "p_iid": 6.126656627101941e-05,
+        "p_cluster_card": 9.017513081986221e-05
+      },
+      "DML gbm": {
+        "n": 4763,
+        "n_morning": 530,
+        "theta": 0.16339290092818518,
+        "ate_ms": 919.9639202815806,
+        "p_iid": 3.996412291275242e-06,
+        "p_cluster_card": 5.403962441145761e-06
+      }
+    },
+    "S1 point-in-time features (UTC clock)": {
+      "PSM v2": {
+        "n": 3764,
+        "n_morning": 301,
+        "n_evening": 3463,
+        "n_pairs": 301,
+        "audited_order": {
+          "mean_diff": 311.57142857142844,
+          "median_diff": 44.0,
+          "p": 0.14535035475027155,
+          "n_pairs": 301,
+          "n_unique_controls": 282
+        },
+        "orders_stat": "median_diff",
+        "orders_mean": 44.0,
+        "orders_sd": 0.0,
+        "orders_min": 44.0,
+        "orders_max": 44.0,
+        "orders_share_p_lt_05": 0.0
+      },
+      "PSM Phase 3": {
+        "n": 18050,
+        "n_morning": 1153,
+        "n_evening": 16897,
+        "n_pairs": 1153,
+        "audited_order": {
+          "mean_diff": -0.0017346053772766545,
+          "median_diff": 0.0,
+          "p": 0.6534807597468598,
+          "n_pairs": 1153,
+          "n_unique_controls": 1070
+        },
+        "orders_stat": "mean_diff",
+        "orders_mean": -0.0017346053772766545,
+        "orders_sd": 0.0,
+        "orders_min": -0.0017346053772766545,
+        "orders_max": -0.0017346053772766545,
+        "orders_share_p_lt_05": 0.0
+      },
+      "DML ridge": {
+        "n": 4449,
+        "n_morning": 496,
+        "theta": 0.12680324342001903,
+        "ate_ms": 642.6237732510591,
+        "p_iid": 0.0003193449035369871,
+        "p_cluster_card": 0.0005321224300804729
+      },
+      "DML gbm": {
+        "n": 4449,
+        "n_morning": 496,
+        "theta": 0.15457364204814944,
+        "ate_ms": 794.5724117770501,
+        "p_iid": 2.085389430805193e-05,
+        "p_cluster_card": 3.667923743058879e-05
+      }
+    },
+    "S2 Eastern clock (post-answer features)": {
+      "PSM v2": {
+        "n": 4929,
+        "n_morning": 2999,
+        "n_evening": 1930,
+        "n_pairs": 2994,
+        "audited_order": {
+          "mean_diff": 417.1325985303938,
+          "median_diff": 636.0,
+          "p": 2.2001284780232018e-10,
+          "n_pairs": 2994,
+          "n_unique_controls": 1038
+        },
+        "orders_stat": "median_diff",
+        "orders_mean": 610.185,
+        "orders_sd": 93.22059357060844,
+        "orders_min": 444.0,
+        "orders_max": 860.5,
+        "orders_share_p_lt_05": 1.0
+      },
+      "PSM Phase 3": {
+        "n": 25667,
+        "n_morning": 17055,
+        "n_evening": 8612,
+        "n_pairs": 17055,
+        "audited_order": {
+          "mean_diff": 0.0021694517736734475,
+          "median_diff": 0.0,
+          "p": 0.025601989714764385,
+          "n_pairs": 17055,
+          "n_unique_controls": 4314
+        },
+        "orders_stat": "mean_diff",
+        "orders_mean": 0.0021694517736734475,
+        "orders_sd": 0.0,
+        "orders_min": 0.0021694517736734475,
+        "orders_max": 0.0021694517736734475,
+        "orders_share_p_lt_05": 1.0
+      },
+      "DML ridge": {
+        "n": 6363,
+        "n_morning": 4172,
+        "theta": 0.05958612763705838,
+        "ate_ms": 332.997081645553,
+        "p_iid": 0.005892271239287468,
+        "p_cluster_card": 0.005731947831179792
+      },
+      "DML gbm": {
+        "n": 6363,
+        "n_morning": 4172,
+        "theta": 0.09721957208265568,
+        "ate_ms": 553.7678542818861,
+        "p_iid": 5.200951930922493e-05,
+        "p_cluster_card": 3.919218979080456e-05
+      }
+    },
+    "S3 Eastern clock + point-in-time features": {
+      "PSM v2": {
+        "n": 4512,
+        "n_morning": 2709,
+        "n_evening": 1803,
+        "n_pairs": 2709,
+        "audited_order": {
+          "mean_diff": 612.251015134736,
+          "median_diff": 357.0,
+          "p": 6.366264291988092e-05,
+          "n_pairs": 2709,
+          "n_unique_controls": 1054
+        },
+        "orders_stat": "median_diff",
+        "orders_mean": 357.0,
+        "orders_sd": 0.0,
+        "orders_min": 357.0,
+        "orders_max": 357.0,
+        "orders_share_p_lt_05": 1.0
+      },
+      "PSM Phase 3": {
+        "n": 21242,
+        "n_morning": 14071,
+        "n_evening": 7171,
+        "n_pairs": 14062,
+        "audited_order": {
+          "mean_diff": 0.007040250320011432,
+          "median_diff": 0.0,
+          "p": 2.5501643834520686e-09,
+          "n_pairs": 14062,
+          "n_unique_controls": 3240
+        },
+        "orders_stat": "mean_diff",
+        "orders_mean": 0.007040250320011432,
+        "orders_sd": 0.0,
+        "orders_min": 0.007040250320011432,
+        "orders_max": 0.007040250320011432,
+        "orders_share_p_lt_05": 1.0
+      },
+      "DML ridge": {
+        "n": 5819,
+        "n_morning": 3781,
+        "theta": 0.0937409124124,
+        "ate_ms": 495.1880608733187,
+        "p_iid": 2.2238821331308903e-05,
+        "p_cluster_card": 2.9948113349062235e-05
+      },
+      "DML gbm": {
+        "n": 5819,
+        "n_morning": 3781,
+        "theta": 0.14372236108398947,
+        "ate_ms": 778.8133464906837,
+        "p_iid": 4.800809917873856e-09,
+        "p_cluster_card": 5.599632151852475e-09
+      }
+    }
+  },
+  "F1_reconstruction": {
+    "cards": 9019,
+    "events": 240,
+    "quartiles": [
+      {
+        "q": "Q1 (Hardest)",
+        "lapses": 208,
+        "total": 2759,
+        "rate": 0.07538963392533526,
+        "reported lapses": 205,
+        "reported total": 2742
+      },
+      {
+        "q": "Q2",
+        "lapses": 15,
+        "total": 2445,
+        "rate": 0.006134969325153374,
+        "reported lapses": 15,
+        "reported total": 2445
+      },
+      {
+        "q": "Q3",
+        "lapses": 13,
+        "total": 2890,
+        "rate": 0.004498269896193772,
+        "reported lapses": 13,
+        "reported total": 2890
+      },
+      {
+        "q": "Q4 (Easiest)",
+        "lapses": 4,
+        "total": 925,
+        "rate": 0.004324324324324324,
+        "reported lapses": 4,
+        "reported total": 925
+      }
+    ]
+  },
+  "F2_cox_as_audited": {
+    "coef": 0.7191405351548423,
+    "HR": 2.052668256089456,
+    "p": 1.0185810072442178e-11
+  },
+  "F3_circularity": {
+    "q1_threshold": 2.65,
+    "n_events": 240,
+    "events_in_Q1_by_final_factor": 208,
+    "events_in_Q1_by_factor_before_first_lapse": 234,
+    "events_with_reviews_after_first_lapse_counted_in_duration": 240,
+    "median_reps_total_for_events": 14.0,
+    "median_reps_at_first_lapse": 5.0,
+    "median_factor_change_at_first_lapse_pts": 199.99999999999974
+  },
+  "F4_cox_time_to_first_lapse_pre_lapse_factor": {
+    "coef": -0.7839886033508712,
+    "HR": 0.4565812530900039,
+    "p": 1.2527338846726285e-12,
+    "n": 9019
+  },
+  "G_inventory": [
+    {
+      "file": "dashboard.py",
+      "where": "line 18",
+      "kind": "train/test or CV split",
+      "code": "from sklearn.model_selection import KFold"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 19",
+      "kind": "scaler fit on full data",
+      "code": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 202",
+      "kind": "scaler fit on full data",
+      "code": "scaler = StandardScaler()"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 203",
+      "kind": "scaler fit on full data",
+      "code": "X_s = scaler.fit_transform(X)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 206",
+      "kind": "train/test or CV split",
+      "code": "kf = KFold(n_splits=n_splits, shuffle=True, random_state=seed)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 206",
+      "kind": "shuffle / random state",
+      "code": "kf = KFold(n_splits=n_splits, shuffle=True, random_state=seed)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 220",
+      "kind": "train/test or CV split",
+      "code": "def _logistic(): return LogisticRegressionCV(cv=5, max_iter=1000, random_state=42)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 220",
+      "kind": "shuffle / random state",
+      "code": "def _logistic(): return LogisticRegressionCV(cv=5, max_iter=1000, random_state=42)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 221",
+      "kind": "shuffle / random state",
+      "code": "def _gbr():      return GradientBoostingRegressor(n_estimators=100, max_depth=3, random_state=42)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 222",
+      "kind": "shuffle / random state",
+      "code": "def _gbc():      return GradientBoostingClassifier(n_estimators=100, max_depth=3, random_state=42)"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 505",
+      "kind": "rolling window",
+      "code": "daily[\"reviews_7d\"] = daily[\"reviews\"].rolling(7, center=True, min_periods=1).mean()"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 506",
+      "kind": "rolling window",
+      "code": "daily[\"ret_7d\"]     = daily[\"retention\"].rolling(7, center=True, min_periods=1).mean()"
+    },
+    {
+      "file": "dashboard.py",
+      "where": "line 612",
+      "kind": "quantile cut on full data",
+      "code": "lift_ci        = np.quantile(lift, [0.05, 0.95])"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 6, line 6",
+      "kind": "rolling window",
+      "code": "daily['reviews_7d'] = daily['reviews'].rolling(7, center=True).mean()"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 6, line 16",
+      "kind": "rolling window",
+      "code": "ret_7d = daily['retention'].rolling(7, center=True).mean()"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 10, line 10",
+      "kind": "imputation with a full-sample statistic",
+      "code": "ts['gap_days']  = (ts['date'] - ts['prev_date']).dt.days.fillna(1)"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 10, line 29",
+      "kind": "rolling window",
+      "code": "rollstd = ts['reviews'].rolling(14).std()"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 11, line 6",
+      "kind": "rolling window",
+      "code": "ts['ret_smooth'] = ts['retention'].rolling(7, min_periods=1, center=True).mean()"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 14, line 2",
+      "kind": "scaler fit on full data",
+      "code": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 14, line 26",
+      "kind": "imputation with a full-sample statistic",
+      "code": "psm_df['log_days_since'] = np.log1p(psm_df['days_since_last'].fillna(psm_df['days_since_last'].median()))"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 15, line 5",
+      "kind": "scaler fit on full data",
+      "code": "scaler = StandardScaler()"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 15, line 6",
+      "kind": "scaler fit on full data",
+      "code": "X_sc = scaler.fit_transform(X)"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 15, line 8",
+      "kind": "shuffle / random state",
+      "code": "lr = LogisticRegression(max_iter=1000, C=1.0, random_state=42)"
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 22, line 21",
+      "kind": "quantile cut on full data",
+      "code": "surv_fit['ef_quartile'] = pd.qcut("
+    },
+    {
+      "file": "anki_causal_analysis.ipynb",
+      "where": "cell 25, line 5",
+      "kind": "imputation with a full-sample statistic",
+      "code": "hr_df['label'] = hr_df['covariate'].map({'ease_factor_c': 'Ease factor (mean-centered, +1 unit)'}).fillna(hr_d"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 1, line 8",
+      "kind": "scaler fit on full data",
+      "code": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 2, line 17",
+      "kind": "quantile cut on full data",
+      "code": "Q1_THRESH = reviewed['ease_factor'].quantile(0.25)"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 3, line 17",
+      "kind": "imputation with a full-sample statistic",
+      "code": "df['log_days_since'] = np.log1p(df['days_since'].fillna(df['days_since'].median()))"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 8, line 5",
+      "kind": "scaler fit on full data",
+      "code": "scaler = StandardScaler()"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 8, line 6",
+      "kind": "scaler fit on full data",
+      "code": "X_sc = scaler.fit_transform(X)"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 8, line 8",
+      "kind": "shuffle / random state",
+      "code": "lr = LogisticRegression(max_iter=1000, C=1.0, random_state=42)"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 18, line 7",
+      "kind": "scaler fit on full data",
+      "code": "X_fs = scaler.fit_transform(X_f)"
+    },
+    {
+      "file": "psm_response_time.ipynb",
+      "where": "cell 18, line 8",
+      "kind": "shuffle / random state",
+      "code": "lr_f = LogisticRegression(max_iter=1000, C=1.0, random_state=42)"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "where": "cell 1, line 8",
+      "kind": "scaler fit on full data",
+      "code": "from sklearn.preprocessing import StandardScaler"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "where": "cell 4, line 8",
+      "kind": "imputation with a full-sample statistic",
+      "code": "df['log_days_since']= np.log1p(df['days_since'].fillna(df['days_since'].median()))"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "where": "cell 6, line 4",
+      "kind": "scaler fit on full data",
+      "code": "scaler = StandardScaler()"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "where": "cell 6, line 5",
+      "kind": "scaler fit on full data",
+      "code": "X_sc = scaler.fit_transform(X)"
+    },
+    {
+      "file": "psm_response_time_v2.ipynb",
+      "where": "cell 6, line 7",
+      "kind": "shuffle / random state",
+      "code": "lr = LogisticRegression(max_iter=1000, C=1.0, random_state=42)"
+    }
+  ]
+}

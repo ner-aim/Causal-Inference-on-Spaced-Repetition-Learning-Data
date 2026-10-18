@@ -1,0 +1,187 @@
+{
+  "n_notes": {
+    "treatment": 1745,
+    "control": 1745
+  },
+  "marker": {
+    "marker_utc": "2026-04-26T18:36:58",
+    "notes_written_at_that_second": 1744,
+    "share_treatment_notes_with_star_now": 1.0,
+    "analysis_start_utc": "2026-04-24T04:00:00"
+  },
+  "headline": [
+    {
+      "sample": "as reported: 2026-04-24 to 2026-06-23",
+      "reviews T": 3648,
+      "reviews C": 3698,
+      "lapse % T": 11.81469298245614,
+      "lapse % C": 10.762574364521363,
+      "diff pp": 1.0521186179347775,
+      "z-test p (reviews independent)": 0.15417138492646232,
+      "cluster-by-note p (lapse)": 0.3170094495922575,
+      "median RT T s": 5.131,
+      "median RT C s": 4.6485,
+      "Mann-Whitney p": 0.00010912822138040293,
+      "cluster-by-note p (log RT)": 0.11379814415448074,
+      "notes with reviews": 2130
+    },
+    {
+      "sample": "from the moment the star marker existed",
+      "reviews T": 3470,
+      "reviews C": 3529,
+      "lapse % T": 12.103746397694524,
+      "lapse % C": 11.164635874185322,
+      "diff pp": 0.9391105235092025,
+      "z-test p (reviews independent)": 0.22046137679948707,
+      "cluster-by-note p (lapse)": 0.38750117391430206,
+      "median RT T s": 5.155,
+      "median RT C s": 4.662,
+      "Mann-Whitney p": 0.00025492929191558067,
+      "cluster-by-note p (log RT)": 0.13725635966147853,
+      "notes with reviews": 2059
+    }
+  ],
+  "bayes_P_treatment_better": 0.07665,
+  "timing": [
+    {
+      "quantity": "treatment-arm reviews in the reported window dated before the marker existed",
+      "value": 178.0
+    },
+    {
+      "quantity": "as % of all treatment-arm reviews in the reported window",
+      "value": 4.879385964912281
+    },
+    {
+      "quantity": "control-arm reviews in the same pre-marker span",
+      "value": 169.0
+    },
+    {
+      "quantity": "span in days between analysis start and marker",
+      "value": 2.6090046296296294
+    },
+    {
+      "quantity": "lapse % treatment arm, pre-marker span",
+      "value": 6.179775280898876
+    },
+    {
+      "quantity": "lapse % control arm, pre-marker span",
+      "value": 2.366863905325444
+    }
+  ],
+  "rerandomisation": [
+    {
+      "window": "reported window",
+      "outcome": "lapse rate (pooled)",
+      "real diff": 1.0521186179347775,
+      "null sd": 1.0733056028749082,
+      "unit": "pp",
+      "re-randomisation p": 0.3301339732053589
+    },
+    {
+      "window": "reported window",
+      "outcome": "mean log response time",
+      "real diff": 0.05078309932368086,
+      "null sd": 0.03206182304054962,
+      "unit": "log RT",
+      "re-randomisation p": 0.11017796440711858
+    },
+    {
+      "window": "from marker onward",
+      "outcome": "lapse rate (pooled)",
+      "real diff": 0.9391105235092025,
+      "null sd": 1.109332673952378,
+      "unit": "pp",
+      "re-randomisation p": 0.39912017596480703
+    },
+    {
+      "window": "from marker onward",
+      "outcome": "mean log response time",
+      "real diff": 0.048842972007957286,
+      "null sd": 0.03279603285476913,
+      "unit": "log RT",
+      "re-randomisation p": 0.1357728454309138
+    },
+    {
+      "window": "pre-experiment (same notes, before 2026-04-24)",
+      "outcome": "lapse rate (pooled)",
+      "real diff": 1.153274680237798,
+      "null sd": 0.73489363856065,
+      "unit": "pp",
+      "re-randomisation p": 0.11157768446310738
+    },
+    {
+      "window": "pre-experiment (same notes, before 2026-04-24)",
+      "outcome": "mean log response time",
+      "real diff": 0.019352013591264594,
+      "null sd": 0.01619328907284878,
+      "unit": "log RT",
+      "re-randomisation p": 0.23875224955008997
+    },
+    {
+      "window": "(cannot be affected)",
+      "outcome": "kanji count of note",
+      "real diff": 0.07507163323782229,
+      "null sd": 0.06574691200608626,
+      "unit": "",
+      "re-randomisation p": 0.2559488102379524
+    },
+    {
+      "window": "(cannot be affected)",
+      "outcome": "deck position of note",
+      "real diff": 0.006442804246270473,
+      "null sd": 0.009617734427331735,
+      "unit": "",
+      "re-randomisation p": 0.5146970605878824
+    }
+  ],
+  "rerandomisation_median_rt": [
+    {
+      "window": "reported window",
+      "statistic": "pooled median RT difference (ms)",
+      "real diff": 482.5,
+      "null sd": 215.35459776040378,
+      "null 2.5%": -416.03749999999997,
+      "null 97.5%": 415.02499999999964,
+      "re-randomisation p": 0.01739652069586083
+    },
+    {
+      "window": "from marker onward",
+      "statistic": "pooled median RT difference (ms)",
+      "real diff": 493.0,
+      "null sd": 216.2096961488586,
+      "null 2.5%": -410.04999999999995,
+      "null 97.5%": 415.0,
+      "re-randomisation p": 0.020995800839832032
+    },
+    {
+      "window": "pre-experiment (same notes)",
+      "statistic": "pooled median RT difference (ms)",
+      "real diff": 81.0,
+      "null sd": 73.82945289695037,
+      "null 2.5%": -147.0,
+      "null 97.5%": 145.0,
+      "re-randomisation p": 0.27754449110177964
+    }
+  ],
+  "did_lapse": {
+    "post gap pp": 1.0521186179347775,
+    "pre gap pp": 1.153274680237798,
+    "difference-in-differences pp": -0.10115606230302054,
+    "null sd pp": 1.2132311599974073,
+    "re-randomisation p": 0.9374125174965007
+  },
+  "pre_period": [
+    {
+      "arm": "control",
+      "pre-period reviews": 26079,
+      "lapse %": 16.66858391809502,
+      "median RT s": 3.972
+    },
+    {
+      "arm": "treatment",
+      "pre-period reviews": 25912,
+      "lapse %": 17.821858598332817,
+      "median RT s": 4.053
+    }
+  ]
+}

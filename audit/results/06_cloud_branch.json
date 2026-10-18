@@ -1,0 +1,52 @@
+{
+  "description": {
+    "parquet_rows": 61348,
+    "parquet_last_review_date": "2026-07-10",
+    "tracked_in_git": true,
+    "diff_vs_HEAD": "(none)",
+    "cloud_branch_rows": 29531,
+    "cloud_branch_morning": 2524,
+    "share_with_factor_ge_2500": 0.7620128001083607,
+    "share_with_factor_zero": 0.06826724459043039,
+    "share_capped_60s": 0.04767871050760218,
+    "share_time_zero": 0.0
+  },
+  "cloud_branch_estimates": [
+    {
+      "learner": "ridge",
+      "n": 29531,
+      "theta": 0.06263106324396181,
+      "ATE ms": 332.0860940020055,
+      "95% CI low": 144.94679339542,
+      "95% CI high": 525.8545467402892,
+      "p iid": 0.0004212210007908278,
+      "p cluster(card)": 0.0005385473373377422
+    },
+    {
+      "learner": "gbm",
+      "n": 29531,
+      "theta": 0.10303567813410422,
+      "ATE ms": 557.6264966194899,
+      "95% CI low": 355.98826414769314,
+      "95% CI high": 766.6652466363939,
+      "p iid": 2.1091901049782452e-08,
+      "p cluster(card)": 3.235283395132559e-08
+    }
+  ],
+  "local_branch_estimates": [
+    {
+      "learner": "ridge",
+      "n": 4763,
+      "theta": 0.13795637090055313,
+      "ATE ms": 766.6854929169134,
+      "branch": "local (hard reviews, as reported)"
+    },
+    {
+      "learner": "gbm",
+      "n": 4763,
+      "theta": 0.16339290092818518,
+      "ATE ms": 919.9639202815806,
+      "branch": "local (hard reviews, as reported)"
+    }
+  ]
+}

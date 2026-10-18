@@ -1,0 +1,25 @@
+| analysis | n | morning | PS range morning | PS range evening | outside [0.05,0.95] | below 0.05 | above 0.95 | PS AUC |
+|---|---|---|---|---|---|---|---|---|
+| PSM v2 (UTC hours, as audited) | 4038 | 309 | 0.062-0.094 | 0.060-0.097 | 0 (0.0%) | 0 | 0 | 0.535 |
+| PSM Phase 3 (UTC hours, as audited) | 21803 | 1375 | 0.056-0.072 | 0.001-0.072 | 27 (0.1%) | 27 | 0 | 0.521 |
+| DML ridge (UTC hours, as audited) | 4763 | 530 | 0.107-0.117 | 0.107-0.117 | 0 (0.0%) | 0 | 0 | 0.482 |
+| DML gbm (UTC hours, as audited) | 4763 | 530 | 0.009-0.628 | 0.002-0.650 | 1394 (29.3%) | 1394 | 0 | 0.748 |
+| PSM v2 (Eastern hours, sensitivity) | 4929 | 2999 | 0.492-0.702 | 0.503-0.693 | 0 (0.0%) | 0 | 0 | 0.525 |
+
+| analysis | estimate | full | trim, keep PS | trim, refit PS | rows dropped |
+|---|---|---|---|---|---|
+| PSM v2 (UTC hours, as audited) | median diff, ms | +1084 | +1084 | +1084 | 0 |
+| PSM v2 (UTC hours, as audited) | mean diff, ms | +508 | +508 | +508 | 0 |
+| PSM Phase 3 (UTC hours, as audited) | ATE retention, pp | -0.073 | -0.073 | +0.436 | 27 |
+| DML ridge (UTC hours, as audited) | ATE ms | +767 | +767 (drop rows) | +767 (clip PS) | 0 |
+| DML gbm (UTC hours, as audited) | ATE ms | +920 | +918 (drop rows) | +907 (clip PS) | 1394 |
+
+[PSM v2 (UTC hours, as audited)] months with zero morning rows: 5 of 16; mean PS in those months: 0.0722; mean PS in months with morning rows: 0.0802
+
+[PSM v2 (Eastern hours, sensitivity)] months with zero morning rows: 0 of 15; mean PS in those months: nan; mean PS in months with morning rows: 0.6160
+
+[PSM Phase 3 (UTC hours, as audited)] months with zero morning rows: 3 of 16; mean PS in those months: 0.0626; mean PS in months with morning rows: 0.0632
+
+[DML ridge (UTC hours, as audited)] months with zero morning rows: 4 of 19; mean PS in those months: 0.1116; mean PS in months with morning rows: 0.1112
+
+[DML gbm (UTC hours, as audited)] months with zero morning rows: 4 of 19; mean PS in those months: 0.0080; mean PS in months with morning rows: 0.1137

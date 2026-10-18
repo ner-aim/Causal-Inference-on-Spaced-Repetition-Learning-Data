@@ -165,6 +165,8 @@ def load_hard_reviews_dml() -> pd.DataFrame:
         df["log_rt"]      = np.log(df["time"].clip(1))
         df["ease_factor"] = df.get("ease_factor", df["factor"] / 1000 if "factor" in df.columns else np.nan)
         df["log_ivl"]     = np.log(df["ivl"].abs().clip(1)) if "ivl" in df.columns else 0.0
+        # same sample as the local SQL branch below: hard reviews, valid response times
+        df = df[(df["factor"] > 0) & (df["factor"] < 2500) & (df["time"] > 0) & (df["time"] < ANKI_CAP_MS)]
     else:
         try:
             con = get_connection()
@@ -458,7 +460,9 @@ with tab_findings:
         st.markdown(
             "After propensity score matching, hard cards reviewed in the morning take "
             "**+1,084 ms** longer than the same cards reviewed in the evening "
-            "(p = 0.005, 309 matched pairs)."
+            "(p = 0.005, 309 matched pairs). **Audit caveat:** hours are read on the UTC clock, "
+            "the factor/interval features are recorded after the answer, and the estimate varies "
+            "with row order (432-1,698 ms). See `audit/REPORT.md`."
         )
         if (FIGURES_DIR / "v2_fig3_comparison.png").exists():
             st.image(str(FIGURES_DIR / "v2_fig3_comparison.png"))
@@ -467,7 +471,9 @@ with tab_findings:
         st.markdown("#### ✅ Time of day doesn't affect retention")
         st.markdown(
             "Morning vs evening reviews show **no difference in whether a card is remembered** "
-            "(ATE = −0.07 pp, p = 0.827). With 99.2% retention there is simply no signal to find."
+            "(ATE = −0.07 pp, p = 0.827). With 99.2% retention there is simply no signal to find. "
+            "**Audit caveat:** hours are on the UTC clock; re-read in Eastern time the estimate is not null. "
+            "See `audit/REPORT.md`."
         )
         if (FIGURES_DIR / "fig6_balance.png").exists():
             st.image(str(FIGURES_DIR / "fig6_balance.png"))

@@ -1,0 +1,1055 @@
+{
+  "PSM v2 (UTC hours, as audited)": {
+    "band": {
+      "n": 4038,
+      "n_treated": 309,
+      "outside_total": 0,
+      "outside_pct": 0.0,
+      "below_lo": 0,
+      "above_hi": 0,
+      "auc": 0.5348050485089749,
+      "morning": {
+        "n": 309,
+        "min": 0.06240698692007924,
+        "p05": 0.06934927666999059,
+        "median": 0.07566224282903414,
+        "p95": 0.08744769788086988,
+        "max": 0.09396799230407474,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      },
+      "evening": {
+        "n": 3729,
+        "min": 0.06029017410886477,
+        "p05": 0.06780548441849664,
+        "median": 0.07540744915125741,
+        "p95": 0.08861952352727054,
+        "max": 0.09744346045284133,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      }
+    },
+    "pairs_full": 309,
+    "pairs_trimmed": 309,
+    "rows_dropped_by_trim": 0,
+    "dropped_rows": {},
+    "est_full": {
+      "mean_diff": 507.5825242718438,
+      "median_diff": 1084.0,
+      "n_pairs": 309
+    },
+    "est_trimmed_keep_ps": {
+      "mean_diff": 507.5825242718438,
+      "median_diff": 1084.0,
+      "n_pairs": 309
+    },
+    "est_trimmed": {
+      "mean_diff": 507.5825242718438,
+      "median_diff": 1084.0,
+      "n_pairs": 309
+    },
+    "outcome": "time",
+    "month_table": [
+      {
+        "month": "2025-01",
+        "n": 10,
+        "morning": 0,
+        "mean_ps": 0.0689112057121474,
+        "evening": 10,
+        "morning_share": 0.0,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-02",
+        "n": 273,
+        "morning": 0,
+        "mean_ps": 0.06966193297446911,
+        "evening": 273,
+        "morning_share": 0.0,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-03",
+        "n": 318,
+        "morning": 0,
+        "mean_ps": 0.07091170007030542,
+        "evening": 318,
+        "morning_share": 0.0,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-04",
+        "n": 140,
+        "morning": 0,
+        "mean_ps": 0.0729095137097787,
+        "evening": 140,
+        "morning_share": 0.0,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-05",
+        "n": 208,
+        "morning": 48,
+        "mean_ps": 0.07425864221131603,
+        "evening": 160,
+        "morning_share": 0.23076923076923078,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-06",
+        "n": 293,
+        "morning": 26,
+        "mean_ps": 0.07456406792544529,
+        "evening": 267,
+        "morning_share": 0.08873720136518772,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-07",
+        "n": 573,
+        "morning": 34,
+        "mean_ps": 0.0748582051267353,
+        "evening": 539,
+        "morning_share": 0.059336823734729496,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-08",
+        "n": 591,
+        "morning": 119,
+        "mean_ps": 0.07617984933717722,
+        "evening": 472,
+        "morning_share": 0.20135363790186125,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-09",
+        "n": 414,
+        "morning": 42,
+        "mean_ps": 0.07721074727277795,
+        "evening": 372,
+        "morning_share": 0.10144927536231885,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-10",
+        "n": 433,
+        "morning": 0,
+        "mean_ps": 0.07845337742291399,
+        "evening": 433,
+        "morning_share": 0.0,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-11",
+        "n": 245,
+        "morning": 15,
+        "mean_ps": 0.08108393120328729,
+        "evening": 230,
+        "morning_share": 0.061224489795918366,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-12",
+        "n": 138,
+        "morning": 4,
+        "mean_ps": 0.08254270547008206,
+        "evening": 134,
+        "morning_share": 0.028985507246376812,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-01",
+        "n": 147,
+        "morning": 1,
+        "mean_ps": 0.08428226301375072,
+        "evening": 146,
+        "morning_share": 0.006802721088435374,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-02",
+        "n": 84,
+        "morning": 9,
+        "mean_ps": 0.08467768431062138,
+        "evening": 75,
+        "morning_share": 0.10714285714285714,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-03",
+        "n": 121,
+        "morning": 9,
+        "mean_ps": 0.08462008615329977,
+        "evening": 112,
+        "morning_share": 0.0743801652892562,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-04",
+        "n": 50,
+        "morning": 2,
+        "mean_ps": 0.08739706427398226,
+        "evening": 48,
+        "morning_share": 0.04,
+        "spec": "PSM v2 (UTC hours, as audited)"
+      }
+    ]
+  },
+  "PSM Phase 3 (UTC hours, as audited)": {
+    "band": {
+      "n": 21803,
+      "n_treated": 1375,
+      "outside_total": 27,
+      "outside_pct": 0.12383616933449525,
+      "below_lo": 27,
+      "above_hi": 0,
+      "auc": 0.5208793456396746,
+      "morning": {
+        "n": 1375,
+        "min": 0.056151747783941365,
+        "p05": 0.058520611768391656,
+        "median": 0.06255778842985214,
+        "p95": 0.07161447240369544,
+        "max": 0.07245679366993253,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      },
+      "evening": {
+        "n": 20428,
+        "min": 0.0011292331163581736,
+        "p05": 0.05739420728211731,
+        "median": 0.062309956194804006,
+        "p95": 0.07161447240369544,
+        "max": 0.07245679366993253,
+        "outside_n": 27,
+        "outside_pct": 0.1321715292735461
+      }
+    },
+    "pairs_full": 1375,
+    "pairs_trimmed": 1375,
+    "rows_dropped_by_trim": 27,
+    "dropped_rows": {
+      "n": 27,
+      "n_morning": 0,
+      "retained_mean": 0.8888888888888888,
+      "ease_factor_zero": 4,
+      "deck_enc_zero": 27
+    },
+    "est_full": {
+      "mean_diff": -0.0007272727272726875,
+      "median_diff": 0.0,
+      "n_pairs": 1375
+    },
+    "est_trimmed_keep_ps": {
+      "mean_diff": -0.0007272727272726875,
+      "median_diff": 0.0,
+      "n_pairs": 1375
+    },
+    "est_trimmed": {
+      "mean_diff": 0.004363636363636347,
+      "median_diff": 0.0,
+      "n_pairs": 1375
+    },
+    "outcome": "retained",
+    "month_table": [
+      {
+        "month": "2025-01",
+        "n": 55,
+        "morning": 0,
+        "mean_ps": 0.06285893396360029,
+        "evening": 55,
+        "morning_share": 0.0,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-02",
+        "n": 1152,
+        "morning": 0,
+        "mean_ps": 0.062392384143980247,
+        "evening": 1152,
+        "morning_share": 0.0,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-03",
+        "n": 1242,
+        "morning": 0,
+        "mean_ps": 0.06249512559557324,
+        "evening": 1242,
+        "morning_share": 0.0,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-04",
+        "n": 496,
+        "morning": 1,
+        "mean_ps": 0.06265137682981997,
+        "evening": 495,
+        "morning_share": 0.0020161290322580645,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-05",
+        "n": 1093,
+        "morning": 249,
+        "mean_ps": 0.06281426005514025,
+        "evening": 844,
+        "morning_share": 0.22781335773101555,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-06",
+        "n": 1605,
+        "morning": 136,
+        "mean_ps": 0.06292714736897194,
+        "evening": 1469,
+        "morning_share": 0.08473520249221184,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-07",
+        "n": 2279,
+        "morning": 108,
+        "mean_ps": 0.06294309931702644,
+        "evening": 2171,
+        "morning_share": 0.04738920579201404,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-08",
+        "n": 1828,
+        "morning": 354,
+        "mean_ps": 0.06290624759340688,
+        "evening": 1474,
+        "morning_share": 0.1936542669584245,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-09",
+        "n": 1601,
+        "morning": 171,
+        "mean_ps": 0.06313873429089556,
+        "evening": 1430,
+        "morning_share": 0.10680824484697064,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-10",
+        "n": 1820,
+        "morning": 7,
+        "mean_ps": 0.06293132264760448,
+        "evening": 1813,
+        "morning_share": 0.0038461538461538464,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-11",
+        "n": 2143,
+        "morning": 128,
+        "mean_ps": 0.06336900834619337,
+        "evening": 2015,
+        "morning_share": 0.059729351376574896,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-12",
+        "n": 1417,
+        "morning": 45,
+        "mean_ps": 0.06345492375772734,
+        "evening": 1372,
+        "morning_share": 0.03175723359209598,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-01",
+        "n": 1767,
+        "morning": 7,
+        "mean_ps": 0.06352634285576382,
+        "evening": 1760,
+        "morning_share": 0.003961516694963215,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-02",
+        "n": 1215,
+        "morning": 60,
+        "mean_ps": 0.06359230747213904,
+        "evening": 1155,
+        "morning_share": 0.04938271604938271,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-03",
+        "n": 1319,
+        "morning": 81,
+        "mean_ps": 0.06373074981229242,
+        "evening": 1238,
+        "morning_share": 0.06141015921152388,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-04",
+        "n": 771,
+        "morning": 28,
+        "mean_ps": 0.0638280295196867,
+        "evening": 743,
+        "morning_share": 0.03631647211413749,
+        "spec": "PSM Phase 3 (UTC hours, as audited)"
+      }
+    ]
+  },
+  "DML ridge (UTC hours, as audited)": {
+    "band": {
+      "n": 4763,
+      "n_treated": 530,
+      "outside_total": 0,
+      "outside_pct": 0.0,
+      "below_lo": 0,
+      "above_hi": 0,
+      "auc": 0.48214790348965225,
+      "morning": {
+        "n": 530,
+        "min": 0.10715481707444961,
+        "p05": 0.10783241061917676,
+        "median": 0.11110655930817023,
+        "p95": 0.1157082979931561,
+        "max": 0.11671349146580764,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      },
+      "evening": {
+        "n": 4233,
+        "min": 0.10682048943274045,
+        "p05": 0.10775799081057716,
+        "median": 0.1111433021494749,
+        "p95": 0.11598044137080386,
+        "max": 0.11682277458652854,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      }
+    },
+    "est_full": {
+      "theta": 0.13795637090055313,
+      "se": 0.034421293783246924,
+      "z": 4.007878720924122,
+      "p": 6.126656627101941e-05,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 766.6854929169134,
+      "ci_lo_ms": 378.53189706239635,
+      "ci_hi_ms": 1181.9297268848688
+    },
+    "est_trim_drop": {
+      "theta": 0.13795637090055313,
+      "se": 0.034421293783246924,
+      "z": 4.007878720924122,
+      "p": 6.126656627101941e-05,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 766.6854929169134,
+      "ci_lo_ms": 378.53189706239635,
+      "ci_hi_ms": 1181.9297268848688,
+      "n_dropped": 0
+    },
+    "est_trim_clip": {
+      "theta": 0.13795637090055313,
+      "se": 0.034421293783246924,
+      "z": 4.007878720924122,
+      "p": 6.126656627101941e-05,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 766.6854929169134,
+      "ci_lo_ms": 378.53189706239635,
+      "ci_hi_ms": 1181.9297268848688
+    },
+    "month_table": [
+      {
+        "month": "2025-01",
+        "n": 10,
+        "morning": 0,
+        "mean_ps": 0.11257205672958268,
+        "evening": 10,
+        "morning_share": 0.0,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-02",
+        "n": 273,
+        "morning": 0,
+        "mean_ps": 0.11198946573249406,
+        "evening": 273,
+        "morning_share": 0.0,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-03",
+        "n": 318,
+        "morning": 0,
+        "mean_ps": 0.11189368237928426,
+        "evening": 318,
+        "morning_share": 0.0,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-04",
+        "n": 147,
+        "morning": 7,
+        "mean_ps": 0.1115828350326674,
+        "evening": 140,
+        "morning_share": 0.047619047619047616,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-05",
+        "n": 214,
+        "morning": 54,
+        "mean_ps": 0.11178986526477405,
+        "evening": 160,
+        "morning_share": 0.2523364485981308,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-06",
+        "n": 353,
+        "morning": 86,
+        "mean_ps": 0.11162480603703216,
+        "evening": 267,
+        "morning_share": 0.24362606232294617,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-07",
+        "n": 573,
+        "morning": 34,
+        "mean_ps": 0.11153894202069486,
+        "evening": 539,
+        "morning_share": 0.059336823734729496,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-08",
+        "n": 642,
+        "morning": 170,
+        "mean_ps": 0.11149509460355281,
+        "evening": 472,
+        "morning_share": 0.26479750778816197,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-09",
+        "n": 417,
+        "morning": 45,
+        "mean_ps": 0.1113001639947528,
+        "evening": 372,
+        "morning_share": 0.1079136690647482,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-10",
+        "n": 461,
+        "morning": 28,
+        "mean_ps": 0.11128080631298845,
+        "evening": 433,
+        "morning_share": 0.06073752711496746,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-11",
+        "n": 273,
+        "morning": 43,
+        "mean_ps": 0.11119837239850372,
+        "evening": 230,
+        "morning_share": 0.1575091575091575,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-12",
+        "n": 149,
+        "morning": 15,
+        "mean_ps": 0.1107993819967127,
+        "evening": 134,
+        "morning_share": 0.10067114093959731,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-01",
+        "n": 150,
+        "morning": 4,
+        "mean_ps": 0.11109909453800422,
+        "evening": 146,
+        "morning_share": 0.02666666666666667,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-02",
+        "n": 92,
+        "morning": 17,
+        "mean_ps": 0.11100116091014882,
+        "evening": 75,
+        "morning_share": 0.18478260869565216,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-03",
+        "n": 126,
+        "morning": 14,
+        "mean_ps": 0.11111571283684227,
+        "evening": 112,
+        "morning_share": 0.1111111111111111,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-04",
+        "n": 89,
+        "morning": 9,
+        "mean_ps": 0.11059583169536608,
+        "evening": 80,
+        "morning_share": 0.10112359550561797,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-05",
+        "n": 247,
+        "morning": 2,
+        "mean_ps": 0.11060249772634007,
+        "evening": 245,
+        "morning_share": 0.008097165991902834,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-06",
+        "n": 153,
+        "morning": 2,
+        "mean_ps": 0.11073685171331374,
+        "evening": 151,
+        "morning_share": 0.013071895424836602,
+        "spec": "DML ridge (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-07",
+        "n": 76,
+        "morning": 0,
+        "mean_ps": 0.11000960680683966,
+        "evening": 76,
+        "morning_share": 0.0,
+        "spec": "DML ridge (UTC hours, as audited)"
+      }
+    ]
+  },
+  "DML gbm (UTC hours, as audited)": {
+    "band": {
+      "n": 4763,
+      "n_treated": 530,
+      "outside_total": 1394,
+      "outside_pct": 29.267268528238503,
+      "below_lo": 1394,
+      "above_hi": 0,
+      "auc": 0.7476737137228158,
+      "morning": {
+        "n": 530,
+        "min": 0.00862517209867965,
+        "p05": 0.05220328040644333,
+        "median": 0.1938679305342687,
+        "p95": 0.3086415635485717,
+        "max": 0.6283488055105221,
+        "outside_n": 24,
+        "outside_pct": 4.528301886792453
+      },
+      "evening": {
+        "n": 4233,
+        "min": 0.0021705168318197775,
+        "p05": 0.005092025121777253,
+        "median": 0.07894780960647386,
+        "p95": 0.27376631515411975,
+        "max": 0.6495437918396118,
+        "outside_n": 1370,
+        "outside_pct": 32.36475313016773
+      }
+    },
+    "est_full": {
+      "theta": 0.16339290092818518,
+      "se": 0.035431087768728595,
+      "z": 4.611568857120876,
+      "p": 3.996412291275242e-06,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 919.9639202815806,
+      "ci_lo_ms": 510.5307913710616,
+      "ci_hi_ms": 1358.8406266891054
+    },
+    "est_trim_drop": {
+      "theta": 0.171358595316894,
+      "se": 0.036834141446754544,
+      "z": 4.6521674888119975,
+      "p": 3.2846411674679376e-06,
+      "n": 3369,
+      "gm_rt_ms": 4909.038279812087,
+      "ate_ms": 917.5792489582112,
+      "ci_lo_ms": 511.75264022069246,
+      "ci_hi_ms": 1353.7879991191803,
+      "n_dropped": 1394
+    },
+    "est_trim_clip": {
+      "theta": 0.161186441019728,
+      "se": 0.0353662274090885,
+      "z": 4.557637408006541,
+      "p": 5.173224557531793e-06,
+      "n": 4763,
+      "gm_rt_ms": 5182.917535908429,
+      "ate_ms": 906.5130019355722,
+      "ci_lo_ms": 498.7045125944713,
+      "ci_hi_ms": 1343.5926681622414
+    },
+    "month_table": [
+      {
+        "month": "2025-01",
+        "n": 10,
+        "morning": 0,
+        "mean_ps": 0.007202955594817512,
+        "evening": 10,
+        "morning_share": 0.0,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-02",
+        "n": 273,
+        "morning": 0,
+        "mean_ps": 0.005799047635461717,
+        "evening": 273,
+        "morning_share": 0.0,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-03",
+        "n": 318,
+        "morning": 0,
+        "mean_ps": 0.005972077117517432,
+        "evening": 318,
+        "morning_share": 0.0,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-04",
+        "n": 147,
+        "morning": 7,
+        "mean_ps": 0.04977897481655618,
+        "evening": 140,
+        "morning_share": 0.047619047619047616,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-05",
+        "n": 214,
+        "morning": 54,
+        "mean_ps": 0.2412545460201375,
+        "evening": 160,
+        "morning_share": 0.2523364485981308,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-06",
+        "n": 353,
+        "morning": 86,
+        "mean_ps": 0.2348923977584191,
+        "evening": 267,
+        "morning_share": 0.24362606232294617,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-07",
+        "n": 573,
+        "morning": 34,
+        "mean_ps": 0.07206107728514148,
+        "evening": 539,
+        "morning_share": 0.059336823734729496,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-08",
+        "n": 642,
+        "morning": 170,
+        "mean_ps": 0.24976166228883948,
+        "evening": 472,
+        "morning_share": 0.26479750778816197,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-09",
+        "n": 417,
+        "morning": 45,
+        "mean_ps": 0.10851153318359726,
+        "evening": 372,
+        "morning_share": 0.1079136690647482,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-10",
+        "n": 461,
+        "morning": 28,
+        "mean_ps": 0.07996353197417888,
+        "evening": 433,
+        "morning_share": 0.06073752711496746,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-11",
+        "n": 273,
+        "morning": 43,
+        "mean_ps": 0.1339583853432832,
+        "evening": 230,
+        "morning_share": 0.1575091575091575,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2025-12",
+        "n": 149,
+        "morning": 15,
+        "mean_ps": 0.10117072652438887,
+        "evening": 134,
+        "morning_share": 0.10067114093959731,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-01",
+        "n": 150,
+        "morning": 4,
+        "mean_ps": 0.057960340222600264,
+        "evening": 146,
+        "morning_share": 0.02666666666666667,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-02",
+        "n": 92,
+        "morning": 17,
+        "mean_ps": 0.13804804637589904,
+        "evening": 75,
+        "morning_share": 0.18478260869565216,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-03",
+        "n": 126,
+        "morning": 14,
+        "mean_ps": 0.11348385273947836,
+        "evening": 112,
+        "morning_share": 0.1111111111111111,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-04",
+        "n": 89,
+        "morning": 9,
+        "mean_ps": 0.09525432661926038,
+        "evening": 80,
+        "morning_share": 0.10112359550561797,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-05",
+        "n": 247,
+        "morning": 2,
+        "mean_ps": 0.014047020789605543,
+        "evening": 245,
+        "morning_share": 0.008097165991902834,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-06",
+        "n": 153,
+        "morning": 2,
+        "mean_ps": 0.015204666887929489,
+        "evening": 151,
+        "morning_share": 0.013071895424836602,
+        "spec": "DML gbm (UTC hours, as audited)"
+      },
+      {
+        "month": "2026-07",
+        "n": 76,
+        "morning": 0,
+        "mean_ps": 0.013157700352303374,
+        "evening": 76,
+        "morning_share": 0.0,
+        "spec": "DML gbm (UTC hours, as audited)"
+      }
+    ]
+  },
+  "PSM v2 (Eastern hours, sensitivity)": {
+    "band": {
+      "n": 4929,
+      "n_treated": 2999,
+      "outside_total": 0,
+      "outside_pct": 0.0,
+      "below_lo": 0,
+      "above_hi": 0,
+      "auc": 0.5249246294533411,
+      "morning": {
+        "n": 2999,
+        "min": 0.4917570866621765,
+        "p05": 0.5495597425010555,
+        "median": 0.6088809134647691,
+        "p95": 0.6688363000160938,
+        "max": 0.7019112587081691,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      },
+      "evening": {
+        "n": 1930,
+        "min": 0.5033579844756471,
+        "p05": 0.5403143399207119,
+        "median": 0.6093700148111347,
+        "p95": 0.6552047288662662,
+        "max": 0.6925025513021409,
+        "outside_n": 0,
+        "outside_pct": 0.0
+      }
+    },
+    "pairs_full": 2994,
+    "est_full": {
+      "mean_diff": 417.1325985303938,
+      "median_diff": 636.0,
+      "n_pairs": 2994
+    },
+    "month_table": [
+      {
+        "month": "2025-02",
+        "n": 211,
+        "morning": 110,
+        "mean_ps": 0.5888742698259258,
+        "evening": 101,
+        "morning_share": 0.5213270142180095,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-03",
+        "n": 319,
+        "morning": 174,
+        "mean_ps": 0.5929729897206719,
+        "evening": 145,
+        "morning_share": 0.5454545454545454,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-04",
+        "n": 627,
+        "morning": 581,
+        "mean_ps": 0.592944944791318,
+        "evening": 46,
+        "morning_share": 0.9266347687400319,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-05",
+        "n": 366,
+        "morning": 293,
+        "mean_ps": 0.5961525492285636,
+        "evening": 73,
+        "morning_share": 0.8005464480874317,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-06",
+        "n": 310,
+        "morning": 262,
+        "mean_ps": 0.602078070374972,
+        "evening": 48,
+        "morning_share": 0.8451612903225807,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-07",
+        "n": 576,
+        "morning": 104,
+        "mean_ps": 0.6019250472315674,
+        "evening": 472,
+        "morning_share": 0.18055555555555555,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-08",
+        "n": 789,
+        "morning": 385,
+        "mean_ps": 0.6080870725158178,
+        "evening": 404,
+        "morning_share": 0.4879594423320659,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-09",
+        "n": 462,
+        "morning": 187,
+        "mean_ps": 0.6100108284432142,
+        "evening": 275,
+        "morning_share": 0.40476190476190477,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-10",
+        "n": 353,
+        "morning": 117,
+        "mean_ps": 0.6177347764206884,
+        "evening": 236,
+        "morning_share": 0.3314447592067989,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-11",
+        "n": 214,
+        "morning": 144,
+        "mean_ps": 0.6292157991343439,
+        "evening": 70,
+        "morning_share": 0.6728971962616822,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2025-12",
+        "n": 222,
+        "morning": 190,
+        "mean_ps": 0.6314552786532236,
+        "evening": 32,
+        "morning_share": 0.8558558558558559,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2026-01",
+        "n": 170,
+        "morning": 170,
+        "mean_ps": 0.6356552150982486,
+        "evening": 0,
+        "morning_share": 1.0,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2026-02",
+        "n": 83,
+        "morning": 80,
+        "mean_ps": 0.6479701487385086,
+        "evening": 3,
+        "morning_share": 0.963855421686747,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2026-03",
+        "n": 132,
+        "morning": 123,
+        "mean_ps": 0.6451309898386507,
+        "evening": 9,
+        "morning_share": 0.9318181818181818,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      },
+      {
+        "month": "2026-04",
+        "n": 95,
+        "morning": 79,
+        "mean_ps": 0.6396504026941635,
+        "evening": 16,
+        "morning_share": 0.8315789473684211,
+        "spec": "PSM v2 (Eastern hours, sensitivity)"
+      }
+    ]
+  },
+  "PSM v1": {
+    "note": "Not re-run: v1 selects cards by cards.factor (today's snapshot), and cards.factor in the collection has changed since 2026-04-23, so the v1 sample cannot be rebuilt. Overlap read from the executed notebook output only (psm_response_time_executed.ipynb); see REPORT.md."
+  }
+}

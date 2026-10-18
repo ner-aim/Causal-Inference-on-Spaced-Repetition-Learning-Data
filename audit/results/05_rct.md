@@ -1,0 +1,61 @@
+### 1. Reported result and the same test with note-level clustering
+
+Reported: 7,346 reviews (3,648 T / 3,698 C), lapse 11.81% vs 10.76%, p = 0.154; median RT 5.13 s vs 4.65 s.
+
+| sample | reviews T | reviews C | lapse % T | lapse % C | diff pp | z-test p (reviews independent) | cluster-by-note p (lapse) | median RT T s | median RT C s | Mann-Whitney p | cluster-by-note p (log RT) | notes with reviews |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| as reported: 2026-04-24 to 2026-06-23 | 3648 | 3698 | 11.81 | 10.76 | 1.052 | 0.1542 | 0.317 | 5.131 | 4.649 | 0.0001091 | 0.1138 | 2130 |
+| from the moment the star marker existed | 3470 | 3529 | 12.1 | 11.16 | 0.9391 | 0.2205 | 0.3875 | 5.155 | 4.662 | 0.0002549 | 0.1373 | 2059 |
+
+### 2. The star marker landed after the analysis window opened
+
+notes.mod of the treatment notes: 1,744 of 1,745 rewritten at 2026-04-26 18:36:58 UTC. The analysis counts every review from 2026-04-24 04:00:00 UTC.
+
+| quantity | value |
+|---|---|
+| treatment-arm reviews in the reported window dated before the marker existed | 178 |
+| as % of all treatment-arm reviews in the reported window | 4.879 |
+| control-arm reviews in the same pre-marker span | 169 |
+| span in days between analysis start and marker | 2.609 |
+| lapse % treatment arm, pre-marker span | 6.18 |
+| lapse % control arm, pre-marker span | 2.367 |
+
+### 3-4. Re-randomisation over all 3,490 notes (B=5000) and placebo outcomes
+
+Statistic: treatment minus control. The null re-draws the 1,745/1,745 split over notes and recomputes the same statistic.
+
+| window | outcome | real diff | null sd | unit | re-randomisation p |
+|---|---|---|---|---|---|
+| reported window | lapse rate (pooled) | 1.052 | 1.073 | pp | 0.3301 |
+| reported window | mean log response time | 0.05078 | 0.03206 | log RT | 0.1102 |
+| from marker onward | lapse rate (pooled) | 0.9391 | 1.109 | pp | 0.3991 |
+| from marker onward | mean log response time | 0.04884 | 0.0328 | log RT | 0.1358 |
+| pre-experiment (same notes, before 2026-04-24) | lapse rate (pooled) | 1.153 | 0.7349 | pp | 0.1116 |
+| pre-experiment (same notes, before 2026-04-24) | mean log response time | 0.01935 | 0.01619 | log RT | 0.2388 |
+| (cannot be affected) | kanji count of note | 0.07507 | 0.06575 |  | 0.2559 |
+| (cannot be affected) | deck position of note | 0.006443 | 0.009618 |  | 0.5147 |
+
+### 3b. Re-randomisation test on the REPORTED response-time statistic (pooled median difference)
+
+Reported: +482 ms, Mann-Whitney p = 0.0001 (treats 7,346 reviews as independent). Here the 3,490 notes are re-assigned instead.
+
+| window | statistic | real diff | null sd | null 2.5% | null 97.5% | re-randomisation p |
+|---|---|---|---|---|---|---|
+| reported window | pooled median RT difference (ms) | 482.5 | 215.4 | -416 | 415 | 0.0174 |
+| from marker onward | pooled median RT difference (ms) | 493 | 216.2 | -410 | 415 | 0.021 |
+| pre-experiment (same notes) | pooled median RT difference (ms) | 81 | 73.83 | -147 | 145 | 0.2775 |
+
+### 3c. Lapse-rate gap after minus the gap before the experiment (same notes)
+
+Both gaps are treatment minus control on the same 3,490 notes; the pre-period reviews cannot reflect the treatment.
+
+| post gap pp | pre gap pp | difference-in-differences pp | null sd pp | re-randomisation p |
+|---|---|---|---|---|
+| 1.052 | 1.153 | -0.1012 | 1.213 | 0.9374 |
+
+### 4b. The same notes before the experiment existed
+
+| arm | pre-period reviews | lapse % | median RT s |
+|---|---|---|---|
+| control | 26079 | 16.67 | 3.972 |
+| treatment | 25912 | 17.82 | 4.053 |

@@ -31,6 +31,20 @@
 
 ---
 
+## Audit (2026-10-18)
+
+An independent audit of the causal analyses is in [`audit/REPORT.md`](audit/REPORT.md) (code, plots and numbers; re-run with `audit/run_all.sh`). All 56 reported figures reproduce. The audit also found that several headline numbers are less robust than first reported:
+
+- **Clock.** Hour-of-day splits read the UTC clock, not local (Eastern) time, so "morning" is about 1-8am local. Re-read in Eastern time, the PSM v2 effect is +636 ms (not +1,084), DML is +333 / +554 ms (not +767 / +920), and the Phase 3 retention effect is +0.22 pp (p = 0.026) rather than null.
+- **Features.** `revlog.factor` and `revlog.ivl` are written after the answer, so the v2 "at review time" features are not point-in-time. With pre-answer features PSM v2 is +44 ms (p = 0.145).
+- **PSM v2 stability.** The estimate varies from 432 to 1,698 ms across row orders, because the propensity score is nearly uninformative.
+- **Cox.** The hazard ratio of 2.06 is for higher ease factor going with higher hazard, and uses total reviews as the duration.
+- **RCT.** The star marker was written 2.6 days after the analysis window opened. Treating notes (the unit of assignment) as the unit of inference, the lapse p-value is 0.317 and the response-time p-value is 0.017. The same notes already differed by +1.15 pp in lapse rate before the experiment began.
+
+The sections below are the original write-up and have not been rewritten; read them together with the audit.
+
+---
+
 ## Data Source
 
 My personal Anki SQLite database at `C:\Users\sid99\AppData\Roaming\Anki2\Pottapatri\collection.anki2`.
